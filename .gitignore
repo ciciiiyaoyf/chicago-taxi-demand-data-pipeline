@@ -1,0 +1,50 @@
+# Environment and credentials
+.env
+.env.*
+!.env.example
+*credentials*.json
+*service-account*.json
+*service_account*.json
+*.pem
+*.p8
+*.key
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+env/
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+*.bak
+*.swp
+*~
+
+# Generated datasets and Spark artifacts
+*.csv
+*.parquet
+*.crc
+_SUCCESS
+spark-warehouse/
+data/
+output/
+processed/
+
+# Tableau temporary/backup files (workbooks themselves are not ignored)
+*.twb~
+*.twbr
+~$*.twb*
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+Desktop.ini
+.idea/
+.vscode/
