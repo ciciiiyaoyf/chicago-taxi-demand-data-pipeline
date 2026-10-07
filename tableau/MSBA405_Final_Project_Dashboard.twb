@@ -1,0 +1,2937 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20261.26.0226.1626                               -->
+<workbook original-version='18.1' source-build='2026.1.0 (20261.26.0226.1626)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AccessibleZoneTabOrder />
+    <AnimationOnByDefault />
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <MapboxVectorStylesAndLayers />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelExtractV2 />
+    <ObjectModelTableType />
+    <RelationshipCalculations />
+    <SchemaViewerObjectModel />
+    <SetMembershipControl />
+    <SheetIdentifierTracking />
+    <SpatialFileLayer />
+    <_.fcp.VConnDownstreamExtractsWithWarnings.true...VConnDownstreamExtractsWithWarnings />
+    <WindowsPersistSimpleIdentifiers />
+    <ZoneBackgroundTransparency />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='FINAL_DATASET+ (Multiple Connections)' inline='true' name='federated.0xpsn4x1dkd1zn1esiwuj148rntd' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='YOUR_SNOWFLAKE_ACCOUNT.snowflakecomputing.com' name='snowflake.0hp7h500zlnet91gv5a620lfeim7'>
+            <connection authentication='Username Password' class='snowflake' dbname='TAXI_DEMAND' max-varchar-size='' odbc-connect-string-extras='' one-time-sql='' schema='PUBLIC' server='YOUR_SNOWFLAKE_ACCOUNT.snowflakecomputing.com' service='YOUR_SNOWFLAKE_ROLE' temp-table-detection='optimized' username='YOUR_SNOWFLAKE_USER' warehouse='YOUR_SNOWFLAKE_WAREHOUSE' />
+          </named-connection>
+          <named-connection caption='geo_export_00ee5e33-560e-4eb8-a682-e86ba86bfb24' name='ogrdirect.05h3vf51az2jd31f6esvl09b9w65'>
+            <connection class='ogrdirect' directory='data/census_tracts' filename='census_tracts.shp' password='' server='' tablename='' />
+          </named-connection>
+        </named-connections>
+        <relation type='collection'>
+          <relation connection='snowflake.0hp7h500zlnet91gv5a620lfeim7' name='FINAL_DATASET' table='[TAXI_DEMAND].[PUBLIC].[FINAL_DATASET]' type='table' />
+          <relation connection='ogrdirect.05h3vf51az2jd31f6esvl09b9w65' name='census_tracts.shp' table='[census_tracts.shp]' type='table'>
+            <columns>
+              <column datatype='string' name='statefp10' ordinal='0' />
+              <column datatype='string' name='countyfp10' ordinal='1' />
+              <column datatype='string' name='tractce10' ordinal='2' />
+              <column datatype='string' name='geoid10' ordinal='3' />
+              <column datatype='string' name='name10' ordinal='4' />
+              <column datatype='string' name='namelsad10' ordinal='5' />
+              <column datatype='string' name='commarea' ordinal='6' />
+              <column datatype='real' name='commarea_n' ordinal='7' />
+              <column datatype='string' name='notes' ordinal='8' />
+              <column datatype='spatial' name='Geometry' ordinal='9' />
+            </columns>
+          </relation>
+        </relation>
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>TRACT_ID</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[TRACT_ID]</local-name>
+            <parent-name>[FINAL_DATASET]</parent-name>
+            <remote-alias>TRACT_ID</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>38</precision>
+            <scale>0</scale>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_DECIMAL&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_NUMERIC&quot;</attribute>
+            </attributes>
+            <object-id>[FINAL_DATASET (TAXI_DEMAND.FINAL_DATASET)_B5C8F7C2DC94474F8707834613EF99E8]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MONTH</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[MONTH]</local-name>
+            <parent-name>[FINAL_DATASET]</parent-name>
+            <remote-alias>MONTH</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>38</precision>
+            <scale>0</scale>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_DECIMAL&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_NUMERIC&quot;</attribute>
+            </attributes>
+            <object-id>[FINAL_DATASET (TAXI_DEMAND.FINAL_DATASET)_B5C8F7C2DC94474F8707834613EF99E8]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>TRIP_COUNT</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[TRIP_COUNT]</local-name>
+            <parent-name>[FINAL_DATASET]</parent-name>
+            <remote-alias>TRIP_COUNT</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>38</precision>
+            <scale>0</scale>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_DECIMAL&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_NUMERIC&quot;</attribute>
+            </attributes>
+            <object-id>[FINAL_DATASET (TAXI_DEMAND.FINAL_DATASET)_B5C8F7C2DC94474F8707834613EF99E8]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>TRIPS_PER_CAPITA</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[TRIPS_PER_CAPITA]</local-name>
+            <parent-name>[FINAL_DATASET]</parent-name>
+            <remote-alias>TRIPS_PER_CAPITA</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_DOUBLE&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_DOUBLE&quot;</attribute>
+            </attributes>
+            <object-id>[FINAL_DATASET (TAXI_DEMAND.FINAL_DATASET)_B5C8F7C2DC94474F8707834613EF99E8]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>TRIPS_PER_HOUSEHOLD</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[TRIPS_PER_HOUSEHOLD]</local-name>
+            <parent-name>[FINAL_DATASET]</parent-name>
+            <remote-alias>TRIPS_PER_HOUSEHOLD</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_DOUBLE&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_DOUBLE&quot;</attribute>
+            </attributes>
+            <object-id>[FINAL_DATASET (TAXI_DEMAND.FINAL_DATASET)_B5C8F7C2DC94474F8707834613EF99E8]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>TOTAL_REVENUE</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[TOTAL_REVENUE]</local-name>
+            <parent-name>[FINAL_DATASET]</parent-name>
+            <remote-alias>TOTAL_REVENUE</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_DOUBLE&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_DOUBLE&quot;</attribute>
+            </attributes>
+            <object-id>[FINAL_DATASET (TAXI_DEMAND.FINAL_DATASET)_B5C8F7C2DC94474F8707834613EF99E8]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AVG_TRIP_MILES</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[AVG_TRIP_MILES]</local-name>
+            <parent-name>[FINAL_DATASET]</parent-name>
+            <remote-alias>AVG_TRIP_MILES</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_DOUBLE&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_DOUBLE&quot;</attribute>
+            </attributes>
+            <object-id>[FINAL_DATASET (TAXI_DEMAND.FINAL_DATASET)_B5C8F7C2DC94474F8707834613EF99E8]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AVG_TRIP_MINUTES</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[AVG_TRIP_MINUTES]</local-name>
+            <parent-name>[FINAL_DATASET]</parent-name>
+            <remote-alias>AVG_TRIP_MINUTES</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_DOUBLE&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_DOUBLE&quot;</attribute>
+            </attributes>
+            <object-id>[FINAL_DATASET (TAXI_DEMAND.FINAL_DATASET)_B5C8F7C2DC94474F8707834613EF99E8]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AVG_TRIP_TOTAL</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[AVG_TRIP_TOTAL]</local-name>
+            <parent-name>[FINAL_DATASET]</parent-name>
+            <remote-alias>AVG_TRIP_TOTAL</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_DOUBLE&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_DOUBLE&quot;</attribute>
+            </attributes>
+            <object-id>[FINAL_DATASET (TAXI_DEMAND.FINAL_DATASET)_B5C8F7C2DC94474F8707834613EF99E8]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AVG_TIP_RATE</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[AVG_TIP_RATE]</local-name>
+            <parent-name>[FINAL_DATASET]</parent-name>
+            <remote-alias>AVG_TIP_RATE</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_DOUBLE&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_DOUBLE&quot;</attribute>
+            </attributes>
+            <object-id>[FINAL_DATASET (TAXI_DEMAND.FINAL_DATASET)_B5C8F7C2DC94474F8707834613EF99E8]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>TOTAL_POP</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[TOTAL_POP]</local-name>
+            <parent-name>[FINAL_DATASET]</parent-name>
+            <remote-alias>TOTAL_POP</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>38</precision>
+            <scale>0</scale>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_DECIMAL&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_NUMERIC&quot;</attribute>
+            </attributes>
+            <object-id>[FINAL_DATASET (TAXI_DEMAND.FINAL_DATASET)_B5C8F7C2DC94474F8707834613EF99E8]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>HOUSEHOLDS</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[HOUSEHOLDS]</local-name>
+            <parent-name>[FINAL_DATASET]</parent-name>
+            <remote-alias>HOUSEHOLDS</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>38</precision>
+            <scale>0</scale>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_DECIMAL&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_NUMERIC&quot;</attribute>
+            </attributes>
+            <object-id>[FINAL_DATASET (TAXI_DEMAND.FINAL_DATASET)_B5C8F7C2DC94474F8707834613EF99E8]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>COMMUTERS_16_OVER</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[COMMUTERS_16_OVER]</local-name>
+            <parent-name>[FINAL_DATASET]</parent-name>
+            <remote-alias>COMMUTERS_16_OVER</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>38</precision>
+            <scale>0</scale>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_DECIMAL&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_NUMERIC&quot;</attribute>
+            </attributes>
+            <object-id>[FINAL_DATASET (TAXI_DEMAND.FINAL_DATASET)_B5C8F7C2DC94474F8707834613EF99E8]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CAR_SHARE</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[CAR_SHARE]</local-name>
+            <parent-name>[FINAL_DATASET]</parent-name>
+            <remote-alias>CAR_SHARE</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_DOUBLE&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_DOUBLE&quot;</attribute>
+            </attributes>
+            <object-id>[FINAL_DATASET (TAXI_DEMAND.FINAL_DATASET)_B5C8F7C2DC94474F8707834613EF99E8]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>TRANSIT_SHARE</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[TRANSIT_SHARE]</local-name>
+            <parent-name>[FINAL_DATASET]</parent-name>
+            <remote-alias>TRANSIT_SHARE</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_DOUBLE&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_DOUBLE&quot;</attribute>
+            </attributes>
+            <object-id>[FINAL_DATASET (TAXI_DEMAND.FINAL_DATASET)_B5C8F7C2DC94474F8707834613EF99E8]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>WALK_SHARE</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[WALK_SHARE]</local-name>
+            <parent-name>[FINAL_DATASET]</parent-name>
+            <remote-alias>WALK_SHARE</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_DOUBLE&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_DOUBLE&quot;</attribute>
+            </attributes>
+            <object-id>[FINAL_DATASET (TAXI_DEMAND.FINAL_DATASET)_B5C8F7C2DC94474F8707834613EF99E8]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>WORK_HOME_SHARE</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[WORK_HOME_SHARE]</local-name>
+            <parent-name>[FINAL_DATASET]</parent-name>
+            <remote-alias>WORK_HOME_SHARE</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_DOUBLE&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_DOUBLE&quot;</attribute>
+            </attributes>
+            <object-id>[FINAL_DATASET (TAXI_DEMAND.FINAL_DATASET)_B5C8F7C2DC94474F8707834613EF99E8]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>NO_CAR_SHARE</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[NO_CAR_SHARE]</local-name>
+            <parent-name>[FINAL_DATASET]</parent-name>
+            <remote-alias>NO_CAR_SHARE</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_DOUBLE&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_DOUBLE&quot;</attribute>
+            </attributes>
+            <object-id>[FINAL_DATASET (TAXI_DEMAND.FINAL_DATASET)_B5C8F7C2DC94474F8707834613EF99E8]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CHILDREN_SHARE</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[CHILDREN_SHARE]</local-name>
+            <parent-name>[FINAL_DATASET]</parent-name>
+            <remote-alias>CHILDREN_SHARE</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_DOUBLE&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_DOUBLE&quot;</attribute>
+            </attributes>
+            <object-id>[FINAL_DATASET (TAXI_DEMAND.FINAL_DATASET)_B5C8F7C2DC94474F8707834613EF99E8]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>IN_SCHOOL_SHARE</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[IN_SCHOOL_SHARE]</local-name>
+            <parent-name>[FINAL_DATASET]</parent-name>
+            <remote-alias>IN_SCHOOL_SHARE</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_DOUBLE&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_DOUBLE&quot;</attribute>
+            </attributes>
+            <object-id>[FINAL_DATASET (TAXI_DEMAND.FINAL_DATASET)_B5C8F7C2DC94474F8707834613EF99E8]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MEDIAN_INCOME</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[MEDIAN_INCOME]</local-name>
+            <parent-name>[FINAL_DATASET]</parent-name>
+            <remote-alias>MEDIAN_INCOME</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_DOUBLE&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_DOUBLE&quot;</attribute>
+            </attributes>
+            <object-id>[FINAL_DATASET (TAXI_DEMAND.FINAL_DATASET)_B5C8F7C2DC94474F8707834613EF99E8]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>INCOME_PER_CAPITA</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[INCOME_PER_CAPITA]</local-name>
+            <parent-name>[FINAL_DATASET]</parent-name>
+            <remote-alias>INCOME_PER_CAPITA</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_DOUBLE&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_DOUBLE&quot;</attribute>
+            </attributes>
+            <object-id>[FINAL_DATASET (TAXI_DEMAND.FINAL_DATASET)_B5C8F7C2DC94474F8707834613EF99E8]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>BACHELORS_RATE</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[BACHELORS_RATE]</local-name>
+            <parent-name>[FINAL_DATASET]</parent-name>
+            <remote-alias>BACHELORS_RATE</remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_DOUBLE&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_DOUBLE&quot;</attribute>
+            </attributes>
+            <object-id>[FINAL_DATASET (TAXI_DEMAND.FINAL_DATASET)_B5C8F7C2DC94474F8707834613EF99E8]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>statefp10</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[statefp10]</local-name>
+            <parent-name>[census_tracts.shp]</parent-name>
+            <remote-alias>statefp10</remote-alias>
+            <ordinal>24</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <object-id>[census_tracts.shp_3E2775A026FA4C618F6BFCA3C4F5EBEB]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>countyfp10</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[countyfp10]</local-name>
+            <parent-name>[census_tracts.shp]</parent-name>
+            <remote-alias>countyfp10</remote-alias>
+            <ordinal>25</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <object-id>[census_tracts.shp_3E2775A026FA4C618F6BFCA3C4F5EBEB]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>tractce10</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[tractce10]</local-name>
+            <parent-name>[census_tracts.shp]</parent-name>
+            <remote-alias>tractce10</remote-alias>
+            <ordinal>26</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <object-id>[census_tracts.shp_3E2775A026FA4C618F6BFCA3C4F5EBEB]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>geoid10</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[geoid10]</local-name>
+            <parent-name>[census_tracts.shp]</parent-name>
+            <remote-alias>geoid10</remote-alias>
+            <ordinal>27</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <object-id>[census_tracts.shp_3E2775A026FA4C618F6BFCA3C4F5EBEB]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>name10</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[name10]</local-name>
+            <parent-name>[census_tracts.shp]</parent-name>
+            <remote-alias>name10</remote-alias>
+            <ordinal>28</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <object-id>[census_tracts.shp_3E2775A026FA4C618F6BFCA3C4F5EBEB]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>namelsad10</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[namelsad10]</local-name>
+            <parent-name>[census_tracts.shp]</parent-name>
+            <remote-alias>namelsad10</remote-alias>
+            <ordinal>29</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <object-id>[census_tracts.shp_3E2775A026FA4C618F6BFCA3C4F5EBEB]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>commarea</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[commarea]</local-name>
+            <parent-name>[census_tracts.shp]</parent-name>
+            <remote-alias>commarea</remote-alias>
+            <ordinal>30</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <object-id>[census_tracts.shp_3E2775A026FA4C618F6BFCA3C4F5EBEB]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>commarea_n</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[commarea_n]</local-name>
+            <parent-name>[census_tracts.shp]</parent-name>
+            <remote-alias>commarea_n</remote-alias>
+            <ordinal>31</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[census_tracts.shp_3E2775A026FA4C618F6BFCA3C4F5EBEB]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>notes</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[notes]</local-name>
+            <parent-name>[census_tracts.shp]</parent-name>
+            <remote-alias>notes</remote-alias>
+            <ordinal>32</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <object-id>[census_tracts.shp_3E2775A026FA4C618F6BFCA3C4F5EBEB]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Geometry</remote-name>
+            <remote-type>8</remote-type>
+            <local-name>[Geometry]</local-name>
+            <parent-name>[census_tracts.shp]</parent-name>
+            <remote-alias>Geometry</remote-alias>
+            <ordinal>33</ordinal>
+            <local-type>spatial</local-type>
+            <aggregation>Collect</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[census_tracts.shp_3E2775A026FA4C618F6BFCA3C4F5EBEB]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Avg Tip Rate' datatype='real' name='[AVG_TIP_RATE]' role='measure' type='quantitative' />
+      <column caption='Avg Trip Miles' datatype='real' name='[AVG_TRIP_MILES]' role='measure' type='quantitative' />
+      <column caption='Avg Trip Minutes' datatype='real' name='[AVG_TRIP_MINUTES]' role='measure' type='quantitative' />
+      <column caption='Avg Trip Total' datatype='real' name='[AVG_TRIP_TOTAL]' role='measure' type='quantitative' />
+      <column caption='Bachelors Rate' datatype='real' name='[BACHELORS_RATE]' role='measure' type='quantitative' />
+      <column caption='Car Share' datatype='real' name='[CAR_SHARE]' role='measure' type='quantitative' />
+      <column caption='Children Share' datatype='real' name='[CHILDREN_SHARE]' role='measure' type='quantitative' />
+      <column caption='Commuters 16 Over' datatype='integer' name='[COMMUTERS_16_OVER]' role='measure' type='quantitative' />
+      <column caption='Log Trips Per Capita' datatype='real' name='[Calculation_4230144718049281]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='LOG([TRIPS_PER_CAPITA] + 0.01)' />
+      </column>
+      <column caption='Log Trips Per Household' datatype='real' name='[Calculation_4230144722124802]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='LOG([TRIPS_PER_HOUSEHOLD] + 0.01)' />
+      </column>
+      <column aggregation='None' caption='Car Share (bin)' datatype='integer' name='[Car Share (bin)]' role='dimension' type='ordinal'>
+        <calculation class='bin' decimals='-2' formula='[CAR_SHARE]' peg='0' size='0.05' />
+      </column>
+      <column caption='Households' datatype='integer' name='[HOUSEHOLDS]' role='measure' type='quantitative' />
+      <column caption='Income Per Capita' datatype='real' name='[INCOME_PER_CAPITA]' role='measure' type='quantitative' />
+      <column caption='In School Share' datatype='real' name='[IN_SCHOOL_SHARE]' role='measure' type='quantitative' />
+      <column caption='Median Income' datatype='real' name='[MEDIAN_INCOME]' role='measure' type='quantitative' />
+      <column caption='Month' datatype='integer' name='[MONTH]' role='dimension' type='quantitative' />
+      <column caption='No Car Share' datatype='real' name='[NO_CAR_SHARE]' role='measure' type='quantitative' />
+      <column aggregation='None' caption='No Car Share (bin)' datatype='integer' name='[No Car Share (bin)]' role='dimension' type='ordinal'>
+        <calculation class='bin' decimals='-3' formula='[NO_CAR_SHARE]' peg='0' size='0.128' />
+      </column>
+      <column caption='Total Pop' datatype='integer' name='[TOTAL_POP]' role='measure' type='quantitative' />
+      <column caption='Total Revenue' datatype='real' name='[TOTAL_REVENUE]' role='measure' type='quantitative' />
+      <column caption='Tract Id' datatype='integer' name='[TRACT_ID]' role='dimension' type='ordinal' />
+      <column caption='Transit Share' datatype='real' name='[TRANSIT_SHARE]' role='measure' type='quantitative' />
+      <column caption='Trips Per Capita' datatype='real' name='[TRIPS_PER_CAPITA]' role='measure' type='quantitative' />
+      <column caption='Trips Per Household' datatype='real' name='[TRIPS_PER_HOUSEHOLD]' role='measure' type='quantitative' />
+      <column caption='Trip Count' datatype='integer' name='[TRIP_COUNT]' role='measure' type='quantitative' />
+      <column caption='Walk Share' datatype='real' name='[WALK_SHARE]' role='measure' type='quantitative' />
+      <column caption='Work Home Share' datatype='real' name='[WORK_HOME_SHARE]' role='measure' type='quantitative' />
+      <column caption='FINAL_DATASET' datatype='table' name='[__tableau_internal_object_id__].[FINAL_DATASET (TAXI_DEMAND.FINAL_DATASET)_B5C8F7C2DC94474F8707834613EF99E8]' role='measure' type='quantitative' />
+      <column caption='census_tracts.shp' datatype='table' name='[__tableau_internal_object_id__].[census_tracts.shp_3E2775A026FA4C618F6BFCA3C4F5EBEB]' role='measure' type='quantitative' />
+      <column caption='Commarea' datatype='string' name='[commarea]' role='dimension' type='nominal' />
+      <column caption='Commarea N' datatype='real' name='[commarea_n]' role='measure' type='quantitative' />
+      <column caption='Countyfp10' datatype='string' name='[countyfp10]' role='dimension' semantic-role='[County].[Name]' type='nominal' />
+      <column caption='Geoid10' datatype='string' name='[geoid10]' role='dimension' type='nominal' />
+      <column caption='Name10' datatype='string' name='[name10]' role='dimension' type='nominal' />
+      <column caption='Namelsad10' datatype='string' name='[namelsad10]' role='dimension' type='nominal' />
+      <column caption='Notes' datatype='string' name='[notes]' role='dimension' type='nominal' />
+      <column caption='Statefp10' datatype='string' name='[statefp10]' role='dimension' type='nominal' />
+      <column caption='Tractce10' datatype='string' name='[tractce10]' role='dimension' type='nominal' />
+      <column-instance column='[MONTH]' derivation='None' name='[none:MONTH:qk]' pivot='key' type='quantitative' />
+      <group caption='Action (Car Share (bin))' hidden='true' name='[Action (Car Share (bin))]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[Car Share (bin)]' />
+        </groupfilter>
+      </group>
+      <group caption='Action (Geoid10)' hidden='true' name='[Action (Geoid10)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[geoid10]' />
+        </groupfilter>
+      </group>
+      <group caption='Action (No Car Share (bin),Tract Id)' hidden='true' name='[Action (No Car Share (bin),Tract Id)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[No Car Share (bin)]' />
+          <groupfilter function='level-members' level='[TRACT_ID]' />
+        </groupfilter>
+      </group>
+      <group caption='Action (Tract Id)' hidden='true' name='[Action (Tract Id)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[TRACT_ID]' />
+        </groupfilter>
+      </group>
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' authentication='auth-none' author-locale='en_US' class='hyper' dbname='data/chicago_taxi_dashboard.hyper' default-settings='yes' schema='Extract' sslmode='' tablename='Extract' update-time='03/20/2026 06:56:57 AM' username='tableau_internal_user'>
+          <relation type='collection'>
+            <relation name='FINAL_DATASET (TAXI_DEMAND.FINAL_DATASET)_B5C8F7C2DC94474F8707834613EF99E8' table='[Extract].[FINAL_DATASET (TAXI_DEMAND.FINAL_DATASET)_B5C8F7C2DC94474F8707834613EF99E8]' type='table' />
+            <relation name='census_tracts.shp_3E2775A026FA4C618F6BFCA3C4F5EBEB' table='[Extract].[census_tracts.shp_3E2775A026FA4C618F6BFCA3C4F5EBEB]' type='table' />
+          </relation>
+          <refresh>
+            <refresh-event add-from-file-path='FINAL_DATASET+ (Multiple Connections)' increment-value='%null%' refresh-type='create' rows-inserted='4882' timestamp-start='2026-03-20 06:56:53.727' />
+          </refresh>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>TRACT_ID</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[TRACT_ID]</local-name>
+              <parent-name>[FINAL_DATASET (TAXI_DEMAND.FINAL_DATASET)_B5C8F7C2DC94474F8707834613EF99E8]</parent-name>
+              <remote-alias>TRACT_ID</remote-alias>
+              <ordinal>0</ordinal>
+              <family>FINAL_DATASET</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>554</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[FINAL_DATASET (TAXI_DEMAND.FINAL_DATASET)_B5C8F7C2DC94474F8707834613EF99E8]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>MONTH</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[MONTH]</local-name>
+              <parent-name>[FINAL_DATASET (TAXI_DEMAND.FINAL_DATASET)_B5C8F7C2DC94474F8707834613EF99E8]</parent-name>
+              <remote-alias>MONTH</remote-alias>
+              <ordinal>1</ordinal>
+              <family>FINAL_DATASET</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>12</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[FINAL_DATASET (TAXI_DEMAND.FINAL_DATASET)_B5C8F7C2DC94474F8707834613EF99E8]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>TRIP_COUNT</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[TRIP_COUNT]</local-name>
+              <parent-name>[FINAL_DATASET (TAXI_DEMAND.FINAL_DATASET)_B5C8F7C2DC94474F8707834613EF99E8]</parent-name>
+              <remote-alias>TRIP_COUNT</remote-alias>
+              <ordinal>2</ordinal>
+              <family>FINAL_DATASET</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>648</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[FINAL_DATASET (TAXI_DEMAND.FINAL_DATASET)_B5C8F7C2DC94474F8707834613EF99E8]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>TRIPS_PER_CAPITA</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[TRIPS_PER_CAPITA]</local-name>
+              <parent-name>[FINAL_DATASET (TAXI_DEMAND.FINAL_DATASET)_B5C8F7C2DC94474F8707834613EF99E8]</parent-name>
+              <remote-alias>TRIPS_PER_CAPITA</remote-alias>
+              <ordinal>3</ordinal>
+              <family>FINAL_DATASET</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>2007</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[FINAL_DATASET (TAXI_DEMAND.FINAL_DATASET)_B5C8F7C2DC94474F8707834613EF99E8]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>TRIPS_PER_HOUSEHOLD</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[TRIPS_PER_HOUSEHOLD]</local-name>
+              <parent-name>[FINAL_DATASET (TAXI_DEMAND.FINAL_DATASET)_B5C8F7C2DC94474F8707834613EF99E8]</parent-name>
+              <remote-alias>TRIPS_PER_HOUSEHOLD</remote-alias>
+              <ordinal>4</ordinal>
+              <family>FINAL_DATASET</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>1998</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[FINAL_DATASET (TAXI_DEMAND.FINAL_DATASET)_B5C8F7C2DC94474F8707834613EF99E8]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>TOTAL_REVENUE</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[TOTAL_REVENUE]</local-name>
+              <parent-name>[FINAL_DATASET (TAXI_DEMAND.FINAL_DATASET)_B5C8F7C2DC94474F8707834613EF99E8]</parent-name>
+              <remote-alias>TOTAL_REVENUE</remote-alias>
+              <ordinal>5</ordinal>
+              <family>FINAL_DATASET</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>2100</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[FINAL_DATASET (TAXI_DEMAND.FINAL_DATASET)_B5C8F7C2DC94474F8707834613EF99E8]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>AVG_TRIP_MILES</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[AVG_TRIP_MILES]</local-name>
+              <parent-name>[FINAL_DATASET (TAXI_DEMAND.FINAL_DATASET)_B5C8F7C2DC94474F8707834613EF99E8]</parent-name>
+              <remote-alias>AVG_TRIP_MILES</remote-alias>
+              <ordinal>6</ordinal>
+              <family>FINAL_DATASET</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>2003</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[FINAL_DATASET (TAXI_DEMAND.FINAL_DATASET)_B5C8F7C2DC94474F8707834613EF99E8]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>AVG_TRIP_MINUTES</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[AVG_TRIP_MINUTES]</local-name>
+              <parent-name>[FINAL_DATASET (TAXI_DEMAND.FINAL_DATASET)_B5C8F7C2DC94474F8707834613EF99E8]</parent-name>
+              <remote-alias>AVG_TRIP_MINUTES</remote-alias>
+              <ordinal>7</ordinal>
+              <family>FINAL_DATASET</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>2448</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[FINAL_DATASET (TAXI_DEMAND.FINAL_DATASET)_B5C8F7C2DC94474F8707834613EF99E8]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>AVG_TRIP_TOTAL</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[AVG_TRIP_TOTAL]</local-name>
+              <parent-name>[FINAL_DATASET (TAXI_DEMAND.FINAL_DATASET)_B5C8F7C2DC94474F8707834613EF99E8]</parent-name>
+              <remote-alias>AVG_TRIP_TOTAL</remote-alias>
+              <ordinal>8</ordinal>
+              <family>FINAL_DATASET</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>2095</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[FINAL_DATASET (TAXI_DEMAND.FINAL_DATASET)_B5C8F7C2DC94474F8707834613EF99E8]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>AVG_TIP_RATE</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[AVG_TIP_RATE]</local-name>
+              <parent-name>[FINAL_DATASET (TAXI_DEMAND.FINAL_DATASET)_B5C8F7C2DC94474F8707834613EF99E8]</parent-name>
+              <remote-alias>AVG_TIP_RATE</remote-alias>
+              <ordinal>9</ordinal>
+              <family>FINAL_DATASET</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>1911</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[FINAL_DATASET (TAXI_DEMAND.FINAL_DATASET)_B5C8F7C2DC94474F8707834613EF99E8]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>TOTAL_POP</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[TOTAL_POP]</local-name>
+              <parent-name>[FINAL_DATASET (TAXI_DEMAND.FINAL_DATASET)_B5C8F7C2DC94474F8707834613EF99E8]</parent-name>
+              <remote-alias>TOTAL_POP</remote-alias>
+              <ordinal>10</ordinal>
+              <family>FINAL_DATASET</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>531</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[FINAL_DATASET (TAXI_DEMAND.FINAL_DATASET)_B5C8F7C2DC94474F8707834613EF99E8]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>HOUSEHOLDS</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[HOUSEHOLDS]</local-name>
+              <parent-name>[FINAL_DATASET (TAXI_DEMAND.FINAL_DATASET)_B5C8F7C2DC94474F8707834613EF99E8]</parent-name>
+              <remote-alias>HOUSEHOLDS</remote-alias>
+              <ordinal>11</ordinal>
+              <family>FINAL_DATASET</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>499</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[FINAL_DATASET (TAXI_DEMAND.FINAL_DATASET)_B5C8F7C2DC94474F8707834613EF99E8]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>COMMUTERS_16_OVER</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[COMMUTERS_16_OVER]</local-name>
+              <parent-name>[FINAL_DATASET (TAXI_DEMAND.FINAL_DATASET)_B5C8F7C2DC94474F8707834613EF99E8]</parent-name>
+              <remote-alias>COMMUTERS_16_OVER</remote-alias>
+              <ordinal>12</ordinal>
+              <family>FINAL_DATASET</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>507</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[FINAL_DATASET (TAXI_DEMAND.FINAL_DATASET)_B5C8F7C2DC94474F8707834613EF99E8]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>CAR_SHARE</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[CAR_SHARE]</local-name>
+              <parent-name>[FINAL_DATASET (TAXI_DEMAND.FINAL_DATASET)_B5C8F7C2DC94474F8707834613EF99E8]</parent-name>
+              <remote-alias>CAR_SHARE</remote-alias>
+              <ordinal>13</ordinal>
+              <family>FINAL_DATASET</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>554</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[FINAL_DATASET (TAXI_DEMAND.FINAL_DATASET)_B5C8F7C2DC94474F8707834613EF99E8]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>TRANSIT_SHARE</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[TRANSIT_SHARE]</local-name>
+              <parent-name>[FINAL_DATASET (TAXI_DEMAND.FINAL_DATASET)_B5C8F7C2DC94474F8707834613EF99E8]</parent-name>
+              <remote-alias>TRANSIT_SHARE</remote-alias>
+              <ordinal>14</ordinal>
+              <family>FINAL_DATASET</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>554</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[FINAL_DATASET (TAXI_DEMAND.FINAL_DATASET)_B5C8F7C2DC94474F8707834613EF99E8]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>WALK_SHARE</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[WALK_SHARE]</local-name>
+              <parent-name>[FINAL_DATASET (TAXI_DEMAND.FINAL_DATASET)_B5C8F7C2DC94474F8707834613EF99E8]</parent-name>
+              <remote-alias>WALK_SHARE</remote-alias>
+              <ordinal>15</ordinal>
+              <family>FINAL_DATASET</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>514</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[FINAL_DATASET (TAXI_DEMAND.FINAL_DATASET)_B5C8F7C2DC94474F8707834613EF99E8]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>WORK_HOME_SHARE</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[WORK_HOME_SHARE]</local-name>
+              <parent-name>[FINAL_DATASET (TAXI_DEMAND.FINAL_DATASET)_B5C8F7C2DC94474F8707834613EF99E8]</parent-name>
+              <remote-alias>WORK_HOME_SHARE</remote-alias>
+              <ordinal>16</ordinal>
+              <family>FINAL_DATASET</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>545</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[FINAL_DATASET (TAXI_DEMAND.FINAL_DATASET)_B5C8F7C2DC94474F8707834613EF99E8]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>NO_CAR_SHARE</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[NO_CAR_SHARE]</local-name>
+              <parent-name>[FINAL_DATASET (TAXI_DEMAND.FINAL_DATASET)_B5C8F7C2DC94474F8707834613EF99E8]</parent-name>
+              <remote-alias>NO_CAR_SHARE</remote-alias>
+              <ordinal>17</ordinal>
+              <family>FINAL_DATASET</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>552</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[FINAL_DATASET (TAXI_DEMAND.FINAL_DATASET)_B5C8F7C2DC94474F8707834613EF99E8]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>CHILDREN_SHARE</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[CHILDREN_SHARE]</local-name>
+              <parent-name>[FINAL_DATASET (TAXI_DEMAND.FINAL_DATASET)_B5C8F7C2DC94474F8707834613EF99E8]</parent-name>
+              <remote-alias>CHILDREN_SHARE</remote-alias>
+              <ordinal>18</ordinal>
+              <family>FINAL_DATASET</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>554</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[FINAL_DATASET (TAXI_DEMAND.FINAL_DATASET)_B5C8F7C2DC94474F8707834613EF99E8]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>IN_SCHOOL_SHARE</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[IN_SCHOOL_SHARE]</local-name>
+              <parent-name>[FINAL_DATASET (TAXI_DEMAND.FINAL_DATASET)_B5C8F7C2DC94474F8707834613EF99E8]</parent-name>
+              <remote-alias>IN_SCHOOL_SHARE</remote-alias>
+              <ordinal>19</ordinal>
+              <family>FINAL_DATASET</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>551</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[FINAL_DATASET (TAXI_DEMAND.FINAL_DATASET)_B5C8F7C2DC94474F8707834613EF99E8]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>MEDIAN_INCOME</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[MEDIAN_INCOME]</local-name>
+              <parent-name>[FINAL_DATASET (TAXI_DEMAND.FINAL_DATASET)_B5C8F7C2DC94474F8707834613EF99E8]</parent-name>
+              <remote-alias>MEDIAN_INCOME</remote-alias>
+              <ordinal>20</ordinal>
+              <family>FINAL_DATASET</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>547</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[FINAL_DATASET (TAXI_DEMAND.FINAL_DATASET)_B5C8F7C2DC94474F8707834613EF99E8]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>INCOME_PER_CAPITA</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[INCOME_PER_CAPITA]</local-name>
+              <parent-name>[FINAL_DATASET (TAXI_DEMAND.FINAL_DATASET)_B5C8F7C2DC94474F8707834613EF99E8]</parent-name>
+              <remote-alias>INCOME_PER_CAPITA</remote-alias>
+              <ordinal>21</ordinal>
+              <family>FINAL_DATASET</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>552</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[FINAL_DATASET (TAXI_DEMAND.FINAL_DATASET)_B5C8F7C2DC94474F8707834613EF99E8]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>BACHELORS_RATE</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[BACHELORS_RATE]</local-name>
+              <parent-name>[FINAL_DATASET (TAXI_DEMAND.FINAL_DATASET)_B5C8F7C2DC94474F8707834613EF99E8]</parent-name>
+              <remote-alias>BACHELORS_RATE</remote-alias>
+              <ordinal>22</ordinal>
+              <family>FINAL_DATASET</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>554</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[FINAL_DATASET (TAXI_DEMAND.FINAL_DATASET)_B5C8F7C2DC94474F8707834613EF99E8]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>statefp10</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[statefp10]</local-name>
+              <parent-name>[census_tracts.shp_3E2775A026FA4C618F6BFCA3C4F5EBEB]</parent-name>
+              <remote-alias>statefp10</remote-alias>
+              <ordinal>23</ordinal>
+              <family>census_tracts.shp</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+              <object-id>[census_tracts.shp_3E2775A026FA4C618F6BFCA3C4F5EBEB]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>countyfp10</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[countyfp10]</local-name>
+              <parent-name>[census_tracts.shp_3E2775A026FA4C618F6BFCA3C4F5EBEB]</parent-name>
+              <remote-alias>countyfp10</remote-alias>
+              <ordinal>24</ordinal>
+              <family>census_tracts.shp</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+              <object-id>[census_tracts.shp_3E2775A026FA4C618F6BFCA3C4F5EBEB]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>tractce10</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[tractce10]</local-name>
+              <parent-name>[census_tracts.shp_3E2775A026FA4C618F6BFCA3C4F5EBEB]</parent-name>
+              <remote-alias>tractce10</remote-alias>
+              <ordinal>25</ordinal>
+              <family>census_tracts.shp</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>801</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+              <object-id>[census_tracts.shp_3E2775A026FA4C618F6BFCA3C4F5EBEB]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>geoid10</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[geoid10]</local-name>
+              <parent-name>[census_tracts.shp_3E2775A026FA4C618F6BFCA3C4F5EBEB]</parent-name>
+              <remote-alias>geoid10</remote-alias>
+              <ordinal>26</ordinal>
+              <family>census_tracts.shp</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>801</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+              <object-id>[census_tracts.shp_3E2775A026FA4C618F6BFCA3C4F5EBEB]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>name10</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[name10]</local-name>
+              <parent-name>[census_tracts.shp_3E2775A026FA4C618F6BFCA3C4F5EBEB]</parent-name>
+              <remote-alias>name10</remote-alias>
+              <ordinal>27</ordinal>
+              <family>census_tracts.shp</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>801</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+              <object-id>[census_tracts.shp_3E2775A026FA4C618F6BFCA3C4F5EBEB]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>namelsad10</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[namelsad10]</local-name>
+              <parent-name>[census_tracts.shp_3E2775A026FA4C618F6BFCA3C4F5EBEB]</parent-name>
+              <remote-alias>namelsad10</remote-alias>
+              <ordinal>28</ordinal>
+              <family>census_tracts.shp</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>801</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+              <object-id>[census_tracts.shp_3E2775A026FA4C618F6BFCA3C4F5EBEB]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>commarea</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[commarea]</local-name>
+              <parent-name>[census_tracts.shp_3E2775A026FA4C618F6BFCA3C4F5EBEB]</parent-name>
+              <remote-alias>commarea</remote-alias>
+              <ordinal>29</ordinal>
+              <family>census_tracts.shp</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>77</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+              <object-id>[census_tracts.shp_3E2775A026FA4C618F6BFCA3C4F5EBEB]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>commarea_n</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[commarea_n]</local-name>
+              <parent-name>[census_tracts.shp_3E2775A026FA4C618F6BFCA3C4F5EBEB]</parent-name>
+              <remote-alias>commarea_n</remote-alias>
+              <ordinal>30</ordinal>
+              <family>census_tracts.shp</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>77</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[census_tracts.shp_3E2775A026FA4C618F6BFCA3C4F5EBEB]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>notes</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[notes]</local-name>
+              <parent-name>[census_tracts.shp_3E2775A026FA4C618F6BFCA3C4F5EBEB]</parent-name>
+              <remote-alias>notes</remote-alias>
+              <ordinal>31</ordinal>
+              <family>census_tracts.shp</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>8</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+              <object-id>[census_tracts.shp_3E2775A026FA4C618F6BFCA3C4F5EBEB]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Geometry</remote-name>
+              <remote-type>128</remote-type>
+              <local-name>[Geometry]</local-name>
+              <parent-name>[census_tracts.shp_3E2775A026FA4C618F6BFCA3C4F5EBEB]</parent-name>
+              <remote-alias>Geometry</remote-alias>
+              <ordinal>32</ordinal>
+              <family>census_tracts.shp</family>
+              <local-type>spatial</local-type>
+              <aggregation>Collect</aggregation>
+              <approx-count>801</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[census_tracts.shp_3E2775A026FA4C618F6BFCA3C4F5EBEB]</object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+        <filter class='quantitative' column='[none:MONTH:qk]' included-values='in-range-or-null'>
+          <min>1</min>
+          <max>12</max>
+          <target field='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[none:MONTH:qk]' />
+        </filter>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <object-graph>
+        <objects>
+          <object caption='FINAL_DATASET' id='FINAL_DATASET (TAXI_DEMAND.FINAL_DATASET)_B5C8F7C2DC94474F8707834613EF99E8'>
+            <properties context=''>
+              <relation connection='snowflake.0hp7h500zlnet91gv5a620lfeim7' name='FINAL_DATASET' table='[TAXI_DEMAND].[PUBLIC].[FINAL_DATASET]' type='table' />
+            </properties>
+            <properties context='extract'>
+              <relation name='FINAL_DATASET (TAXI_DEMAND.FINAL_DATASET)_B5C8F7C2DC94474F8707834613EF99E8' table='[Extract].[FINAL_DATASET (TAXI_DEMAND.FINAL_DATASET)_B5C8F7C2DC94474F8707834613EF99E8]' type='table' />
+            </properties>
+          </object>
+          <object caption='census_tracts.shp' id='census_tracts.shp_3E2775A026FA4C618F6BFCA3C4F5EBEB'>
+            <properties context=''>
+              <relation connection='ogrdirect.05h3vf51az2jd31f6esvl09b9w65' name='census_tracts.shp' table='[census_tracts.shp]' type='table'>
+                <columns>
+                  <column datatype='string' name='statefp10' ordinal='0' />
+                  <column datatype='string' name='countyfp10' ordinal='1' />
+                  <column datatype='string' name='tractce10' ordinal='2' />
+                  <column datatype='string' name='geoid10' ordinal='3' />
+                  <column datatype='string' name='name10' ordinal='4' />
+                  <column datatype='string' name='namelsad10' ordinal='5' />
+                  <column datatype='string' name='commarea' ordinal='6' />
+                  <column datatype='real' name='commarea_n' ordinal='7' />
+                  <column datatype='string' name='notes' ordinal='8' />
+                  <column datatype='spatial' name='Geometry' ordinal='9' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='census_tracts.shp_3E2775A026FA4C618F6BFCA3C4F5EBEB' table='[Extract].[census_tracts.shp_3E2775A026FA4C618F6BFCA3C4F5EBEB]' type='table' />
+            </properties>
+          </object>
+        </objects>
+        <relationships>
+          <relationship>
+            <expression op='='>
+              <expression op='STR([TRACT_ID])' />
+              <expression op='[geoid10]' />
+            </expression>
+            <first-end-point object-id='FINAL_DATASET (TAXI_DEMAND.FINAL_DATASET)_B5C8F7C2DC94474F8707834613EF99E8' />
+            <second-end-point object-id='census_tracts.shp_3E2775A026FA4C618F6BFCA3C4F5EBEB' />
+          </relationship>
+        </relationships>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <mapsources>
+    <mapsource name='Tableau' />
+  </mapsources>
+  <shared-views>
+    <shared-view name='federated.0xpsn4x1dkd1zn1esiwuj148rntd'>
+      <datasources>
+        <datasource caption='FINAL_DATASET+ (Multiple Connections)' name='federated.0xpsn4x1dkd1zn1esiwuj148rntd' />
+      </datasources>
+      <datasource-dependencies datasource='federated.0xpsn4x1dkd1zn1esiwuj148rntd'>
+        <column caption='Median Income' datatype='real' name='[MEDIAN_INCOME]' role='measure' type='quantitative' />
+        <column caption='Month' datatype='integer' name='[MONTH]' role='dimension' type='quantitative' />
+        <column caption='No Car Share' datatype='real' name='[NO_CAR_SHARE]' role='measure' type='quantitative' />
+        <column caption='Transit Share' datatype='real' name='[TRANSIT_SHARE]' role='measure' type='quantitative' />
+        <column-instance column='[MEDIAN_INCOME]' derivation='Avg' name='[avg:MEDIAN_INCOME:qk]' pivot='key' type='quantitative' />
+        <column-instance column='[NO_CAR_SHARE]' derivation='Avg' name='[avg:NO_CAR_SHARE:qk]' pivot='key' type='quantitative' />
+        <column-instance column='[TRANSIT_SHARE]' derivation='Avg' name='[avg:TRANSIT_SHARE:qk]' pivot='key' type='quantitative' />
+        <column-instance column='[MONTH]' derivation='None' name='[none:MONTH:qk]' pivot='key' type='quantitative' />
+      </datasource-dependencies>
+      <filter class='quantitative' column='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:MEDIAN_INCOME:qk]' included-values='in-range'>
+        <min>10980.0</min>
+        <max>160833.0</max>
+      </filter>
+      <filter class='quantitative' column='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:NO_CAR_SHARE:qk]' included-values='in-range'>
+        <min>0.01320361362056984</min>
+        <max>0.74773413897280971</max>
+      </filter>
+      <filter class='quantitative' column='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:TRANSIT_SHARE:qk]' included-values='in-range'>
+        <min>0.045104086353122595</min>
+        <max>0.7142857142857143</max>
+      </filter>
+      <filter class='quantitative' column='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[none:MONTH:qk]' included-values='in-range-or-null'>
+        <min>1</min>
+        <max>12</max>
+        <target field='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[none:MONTH:qk]' />
+      </filter>
+    </shared-view>
+  </shared-views>
+  <actions>
+    <action caption='Filter 2 (generated)' name='[Action2_DB23A4EEE12E49A8AB1DEB09D535902F]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='Dashboard 1' type='sheet' worksheet='Trips Per Capita Heatmap' />
+      <command command='tsc:tsl-filter'>
+        <param name='special-fields' value='all' />
+        <param name='target' value='Dashboard 1' />
+      </command>
+    </action>
+    <action caption='Filter 1 (generated)' name='[Action2_EE8212D4313E4939A385A9A0425C29F9]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='Dashboard 1' type='sheet' worksheet='Walk Share vs. Avg. Trips Per Capita' />
+      <command command='tsc:tsl-filter'>
+        <param name='special-fields' value='all' />
+        <param name='target' value='Dashboard 1' />
+      </command>
+    </action>
+    <action caption='Filter 3 (generated)' name='[Action3_0E9A1F70E1294A138163BEDED3E5BD33]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='Dashboard 1' type='sheet' worksheet='No Car Share vs. Trips Per Household' />
+      <command command='tsc:tsl-filter'>
+        <param name='special-fields' value='all' />
+        <param name='target' value='Dashboard 1' />
+      </command>
+    </action>
+    <action caption='Filter 4 (generated)' name='[Action4_C3E945F45C5E48369B14E7BBCDCB4E0B]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='Dashboard 1' type='sheet' worksheet='Avg. Median Income vs. Avg. Log Trips Per Capita' />
+      <command command='tsc:tsl-filter'>
+        <param name='special-fields' value='all' />
+        <param name='target' value='Dashboard 1' />
+      </command>
+    </action>
+    <action caption='Filter 5 (generated)' name='[Action5_01D6DA79CC964364BAEE1EC05BE75ED6]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='Dashboard 1' type='sheet' worksheet='Car_Share vs. Avg. Trips Per Capita' />
+      <command command='tsc:tsl-filter'>
+        <param name='special-fields' value='all' />
+        <param name='target' value='Dashboard 1' />
+      </command>
+    </action>
+  </actions>
+  <worksheets>
+    <worksheet name='Avg. Median Income vs. Avg. Log Trips Per Capita'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='FINAL_DATASET+ (Multiple Connections)' name='federated.0xpsn4x1dkd1zn1esiwuj148rntd' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0xpsn4x1dkd1zn1esiwuj148rntd'>
+            <column caption='Bachelors Rate' datatype='real' name='[BACHELORS_RATE]' role='measure' type='quantitative' />
+            <column caption='Car Share' datatype='real' name='[CAR_SHARE]' role='measure' type='quantitative' />
+            <column caption='Log Trips Per Capita' datatype='real' name='[Calculation_4230144718049281]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='LOG([TRIPS_PER_CAPITA] + 0.01)' />
+            </column>
+            <column aggregation='None' caption='Car Share (bin)' datatype='integer' name='[Car Share (bin)]' role='dimension' type='ordinal'>
+              <calculation class='bin' decimals='-2' formula='[CAR_SHARE]' peg='0' size='0.05' />
+            </column>
+            <column caption='Median Income' datatype='real' name='[MEDIAN_INCOME]' role='measure' type='quantitative' />
+            <column caption='Month' datatype='integer' name='[MONTH]' role='dimension' type='quantitative' />
+            <column caption='No Car Share' datatype='real' name='[NO_CAR_SHARE]' role='measure' type='quantitative' />
+            <column caption='Total Pop' datatype='integer' name='[TOTAL_POP]' role='measure' type='quantitative' />
+            <column caption='Tract Id' datatype='integer' name='[TRACT_ID]' role='dimension' type='ordinal' />
+            <column caption='Transit Share' datatype='real' name='[TRANSIT_SHARE]' role='measure' type='quantitative' />
+            <column caption='Trips Per Capita' datatype='real' name='[TRIPS_PER_CAPITA]' role='measure' type='quantitative' />
+            <column-instance column='[BACHELORS_RATE]' derivation='Avg' name='[avg:BACHELORS_RATE:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_4230144718049281]' derivation='Avg' name='[avg:Calculation_4230144718049281:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[MEDIAN_INCOME]' derivation='Avg' name='[avg:MEDIAN_INCOME:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[NO_CAR_SHARE]' derivation='Avg' name='[avg:NO_CAR_SHARE:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[TRANSIT_SHARE]' derivation='Avg' name='[avg:TRANSIT_SHARE:qk]' pivot='key' type='quantitative' />
+            <column caption='Geoid10' datatype='string' name='[geoid10]' role='dimension' type='nominal' />
+            <column-instance column='[MONTH]' derivation='None' name='[none:MONTH:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[TRACT_ID]' derivation='None' name='[none:TRACT_ID:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[TOTAL_POP]' derivation='Sum' name='[sum:TOTAL_POP:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[Action (Car Share (bin))]'>
+            <groupfilter function='level-members' level='[Car Share (bin)]' user:ui-action-filter='[Action5_01D6DA79CC964364BAEE1EC05BE75ED6]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[Action (Geoid10)]'>
+            <groupfilter function='level-members' level='[geoid10]' user:ui-action-filter='[Action2_DB23A4EEE12E49A8AB1DEB09D535902F]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[Action (Tract Id)]'>
+            <groupfilter function='level-members' level='[TRACT_ID]' user:ui-action-filter='[Action2_EE8212D4313E4939A385A9A0425C29F9]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:MEDIAN_INCOME:qk]</column>
+            <column>[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:NO_CAR_SHARE:qk]</column>
+            <column>[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:TRANSIT_SHARE:qk]</column>
+            <column>[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[none:MONTH:qk]</column>
+            <column>[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[Action (Tract Id)]</column>
+            <column>[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[Action (Geoid10)]</column>
+            <column>[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[Action (Car Share (bin))]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:BACHELORS_RATE:qk]' palette='orange_blue_diverging_10_0' type='interpolated' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Circle' />
+            <encodings>
+              <color column='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:BACHELORS_RATE:qk]' />
+              <size column='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[sum:TOTAL_POP:qk]' />
+              <lod column='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[none:TRACT_ID:ok]' />
+            </encodings>
+            <trendline enable-confidence-bands='false' enable-instant-analytics='true' enabled='true' exclude-color='false' exclude-intercept='false' fit='linear' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-transparency' value='206' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:Calculation_4230144718049281:qk]</rows>
+        <cols>[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:MEDIAN_INCOME:qk]</cols>
+      </table>
+      <simple-id uuid='{3DE6D866-723A-45A9-8BD0-2EF6A99A06B0}' />
+    </worksheet>
+    <worksheet name='Car_Share vs. Avg. Trips Per Capita'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='FINAL_DATASET+ (Multiple Connections)' name='federated.0xpsn4x1dkd1zn1esiwuj148rntd' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0xpsn4x1dkd1zn1esiwuj148rntd'>
+            <column caption='Car Share' datatype='real' name='[CAR_SHARE]' role='measure' type='quantitative' />
+            <column aggregation='None' caption='Car Share (bin)' datatype='integer' name='[Car Share (bin)]' role='dimension' type='ordinal'>
+              <calculation class='bin' decimals='-2' formula='[CAR_SHARE]' peg='0' size='0.05' />
+            </column>
+            <column caption='Median Income' datatype='real' name='[MEDIAN_INCOME]' role='measure' type='quantitative' />
+            <column caption='Month' datatype='integer' name='[MONTH]' role='dimension' type='quantitative' />
+            <column caption='No Car Share' datatype='real' name='[NO_CAR_SHARE]' role='measure' type='quantitative' />
+            <column caption='Tract Id' datatype='integer' name='[TRACT_ID]' role='dimension' type='ordinal' />
+            <column caption='Transit Share' datatype='real' name='[TRANSIT_SHARE]' role='measure' type='quantitative' />
+            <column caption='Trips Per Capita' datatype='real' name='[TRIPS_PER_CAPITA]' role='measure' type='quantitative' />
+            <column-instance column='[MEDIAN_INCOME]' derivation='Avg' name='[avg:MEDIAN_INCOME:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[NO_CAR_SHARE]' derivation='Avg' name='[avg:NO_CAR_SHARE:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[TRANSIT_SHARE]' derivation='Avg' name='[avg:TRANSIT_SHARE:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[TRIPS_PER_CAPITA]' derivation='Avg' name='[avg:TRIPS_PER_CAPITA:qk]' pivot='key' type='quantitative' />
+            <column caption='Geoid10' datatype='string' name='[geoid10]' role='dimension' type='nominal' />
+            <column-instance column='[Car Share (bin)]' derivation='None' name='[none:Car Share (bin):ok]' pivot='key' type='ordinal' />
+            <column-instance column='[MONTH]' derivation='None' name='[none:MONTH:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[TRACT_ID]' derivation='Sum' name='[sum:TRACT_ID:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[Action (Geoid10)]'>
+            <groupfilter function='level-members' level='[geoid10]' user:ui-action-filter='[Action2_DB23A4EEE12E49A8AB1DEB09D535902F]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[Action (Tract Id)]'>
+            <groupfilter function='level-members' level='[TRACT_ID]' user:ui-action-filter='[Action2_EE8212D4313E4939A385A9A0425C29F9]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:MEDIAN_INCOME:qk]</column>
+            <column>[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:NO_CAR_SHARE:qk]</column>
+            <column>[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:TRANSIT_SHARE:qk]</column>
+            <column>[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[none:MONTH:qk]</column>
+            <column>[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[Action (Geoid10)]</column>
+            <column>[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[Action (Tract Id)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:TRIPS_PER_CAPITA:qk]' field-type='quantitative' scale='log' scope='rows' type='space' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <lod column='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[sum:TRACT_ID:qk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:TRIPS_PER_CAPITA:qk]</rows>
+        <cols>[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[none:Car Share (bin):ok]</cols>
+      </table>
+      <simple-id uuid='{4634CB69-93E3-43D6-BC30-0397759B811B}' />
+    </worksheet>
+    <worksheet name='No Car Share vs. Trips Per Household'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='FINAL_DATASET+ (Multiple Connections)' name='federated.0xpsn4x1dkd1zn1esiwuj148rntd' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0xpsn4x1dkd1zn1esiwuj148rntd'>
+            <column caption='Car Share' datatype='real' name='[CAR_SHARE]' role='measure' type='quantitative' />
+            <column aggregation='None' caption='Car Share (bin)' datatype='integer' name='[Car Share (bin)]' role='dimension' type='ordinal'>
+              <calculation class='bin' decimals='-2' formula='[CAR_SHARE]' peg='0' size='0.05' />
+            </column>
+            <column caption='Median Income' datatype='real' name='[MEDIAN_INCOME]' role='measure' type='quantitative' />
+            <column caption='Month' datatype='integer' name='[MONTH]' role='dimension' type='quantitative' />
+            <column caption='No Car Share' datatype='real' name='[NO_CAR_SHARE]' role='measure' type='quantitative' />
+            <column aggregation='None' caption='No Car Share (bin)' datatype='integer' name='[No Car Share (bin)]' role='dimension' type='ordinal'>
+              <calculation class='bin' decimals='-3' formula='[NO_CAR_SHARE]' peg='0' size='0.128' />
+            </column>
+            <column caption='Tract Id' datatype='integer' name='[TRACT_ID]' role='dimension' type='ordinal' />
+            <column caption='Transit Share' datatype='real' name='[TRANSIT_SHARE]' role='measure' type='quantitative' />
+            <column caption='Trips Per Household' datatype='real' name='[TRIPS_PER_HOUSEHOLD]' role='measure' type='quantitative' />
+            <column-instance column='[MEDIAN_INCOME]' derivation='Avg' name='[avg:MEDIAN_INCOME:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[NO_CAR_SHARE]' derivation='Avg' name='[avg:NO_CAR_SHARE:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[TRANSIT_SHARE]' derivation='Avg' name='[avg:TRANSIT_SHARE:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[TRIPS_PER_HOUSEHOLD]' derivation='Avg' name='[avg:TRIPS_PER_HOUSEHOLD:qk]' pivot='key' type='quantitative' />
+            <column caption='Geoid10' datatype='string' name='[geoid10]' role='dimension' type='nominal' />
+            <column-instance column='[MONTH]' derivation='None' name='[none:MONTH:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[No Car Share (bin)]' derivation='None' name='[none:No Car Share (bin):ok]' pivot='key' type='ordinal' />
+            <column-instance column='[geoid10]' derivation='None' name='[none:geoid10:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[Action (Car Share (bin))]'>
+            <groupfilter function='level-members' level='[Car Share (bin)]' user:ui-action-filter='[Action5_01D6DA79CC964364BAEE1EC05BE75ED6]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[Action (Geoid10)]'>
+            <groupfilter function='level-members' level='[geoid10]' user:ui-action-filter='[Action2_DB23A4EEE12E49A8AB1DEB09D535902F]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[Action (Tract Id)]'>
+            <groupfilter function='level-members' level='[TRACT_ID]' user:ui-action-filter='[Action2_EE8212D4313E4939A385A9A0425C29F9]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:MEDIAN_INCOME:qk]</column>
+            <column>[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:NO_CAR_SHARE:qk]</column>
+            <column>[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:TRANSIT_SHARE:qk]</column>
+            <column>[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[none:MONTH:qk]</column>
+            <column>[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[Action (Tract Id)]</column>
+            <column>[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[Action (Geoid10)]</column>
+            <column>[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[Action (Car Share (bin))]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:TRIPS_PER_HOUSEHOLD:qk]' field-type='quantitative' max='15.0' min='0.0' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Circle' />
+            <encodings>
+              <lod column='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[none:geoid10:nk]' />
+            </encodings>
+            <reference-line axis-column='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:TRIPS_PER_HOUSEHOLD:qk]' boxplot-mark-exclusion='false' boxplot-whisker-type='standard' enable-instant-analytics='true' formula='average' id='refline0' label-type='automatic' probability='95' scope='per-cell' symmetric='false' value-column='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:TRIPS_PER_HOUSEHOLD:qk]' z-order='1' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='0.25' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:TRIPS_PER_HOUSEHOLD:qk]</rows>
+        <cols>[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[none:No Car Share (bin):ok]</cols>
+      </table>
+      <simple-id uuid='{0AD928B2-8DFA-4D75-A496-53D7515CAEA9}' />
+    </worksheet>
+    <worksheet name='Sheet 3'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='FINAL_DATASET+ (Multiple Connections)' name='federated.0xpsn4x1dkd1zn1esiwuj148rntd' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0xpsn4x1dkd1zn1esiwuj148rntd'>
+            <column caption='Log Trips Per Household' datatype='real' name='[Calculation_4230144722124802]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='LOG([TRIPS_PER_HOUSEHOLD] + 0.01)' />
+            </column>
+            <column caption='Median Income' datatype='real' name='[MEDIAN_INCOME]' role='measure' type='quantitative' />
+            <column caption='Month' datatype='integer' name='[MONTH]' role='dimension' type='quantitative' />
+            <column caption='No Car Share' datatype='real' name='[NO_CAR_SHARE]' role='measure' type='quantitative' />
+            <column caption='Transit Share' datatype='real' name='[TRANSIT_SHARE]' role='measure' type='quantitative' />
+            <column caption='Trips Per Household' datatype='real' name='[TRIPS_PER_HOUSEHOLD]' role='measure' type='quantitative' />
+            <column-instance column='[Calculation_4230144722124802]' derivation='Avg' name='[avg:Calculation_4230144722124802:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[MEDIAN_INCOME]' derivation='Avg' name='[avg:MEDIAN_INCOME:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[NO_CAR_SHARE]' derivation='Avg' name='[avg:NO_CAR_SHARE:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[TRANSIT_SHARE]' derivation='Avg' name='[avg:TRANSIT_SHARE:qk]' pivot='key' type='quantitative' />
+            <column caption='Geoid10' datatype='string' name='[geoid10]' role='dimension' type='nominal' />
+            <column-instance column='[MONTH]' derivation='None' name='[none:MONTH:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[geoid10]' derivation='None' name='[none:geoid10:nk]' pivot='key' type='nominal' />
+            <column-instance column='[NO_CAR_SHARE]' derivation='Sum' name='[sum:NO_CAR_SHARE:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[Action (Geoid10)]'>
+            <groupfilter function='level-members' level='[geoid10]' user:ui-action-filter='[Action1_D3470D5EBA3D46AD91E0B6F7A5B478AA]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='quantitative' column='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[sum:NO_CAR_SHARE:qk]' included-values='non-null' />
+          <slices>
+            <column>[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[sum:NO_CAR_SHARE:qk]</column>
+            <column>[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[Action (Geoid10)]</column>
+            <column>[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[none:MONTH:qk]</column>
+            <column>[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:NO_CAR_SHARE:qk]</column>
+            <column>[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:TRANSIT_SHARE:qk]</column>
+            <column>[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:MEDIAN_INCOME:qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:MEDIAN_INCOME:qk]' palette='orange_blue_diverging_10_0' type='interpolated' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:MEDIAN_INCOME:qk]' />
+              <lod column='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[none:geoid10:nk]' />
+            </encodings>
+            <trendline enable-confidence-bands='false' enable-instant-analytics='true' enabled='true' exclude-color='false' exclude-intercept='false' fit='linear' />
+          </pane>
+        </panes>
+        <rows>[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:Calculation_4230144722124802:qk]</rows>
+        <cols>[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:NO_CAR_SHARE:qk]</cols>
+      </table>
+      <simple-id uuid='{BC747CAA-25E9-44F6-8DD1-6F7D31BD9E12}' />
+    </worksheet>
+    <worksheet name='Sheet 4'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='FINAL_DATASET+ (Multiple Connections)' name='federated.0xpsn4x1dkd1zn1esiwuj148rntd' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0xpsn4x1dkd1zn1esiwuj148rntd'>
+            <column caption='Log Trips Per Capita' datatype='real' name='[Calculation_4230144718049281]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='LOG([TRIPS_PER_CAPITA] + 0.01)' />
+            </column>
+            <column caption='Median Income' datatype='real' name='[MEDIAN_INCOME]' role='measure' type='quantitative' />
+            <column caption='Month' datatype='integer' name='[MONTH]' role='dimension' type='quantitative' />
+            <column caption='No Car Share' datatype='real' name='[NO_CAR_SHARE]' role='measure' type='quantitative' />
+            <column caption='Total Pop' datatype='integer' name='[TOTAL_POP]' role='measure' type='quantitative' />
+            <column caption='Transit Share' datatype='real' name='[TRANSIT_SHARE]' role='measure' type='quantitative' />
+            <column caption='Trips Per Capita' datatype='real' name='[TRIPS_PER_CAPITA]' role='measure' type='quantitative' />
+            <column-instance column='[Calculation_4230144718049281]' derivation='Avg' name='[avg:Calculation_4230144718049281:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[MEDIAN_INCOME]' derivation='Avg' name='[avg:MEDIAN_INCOME:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[NO_CAR_SHARE]' derivation='Avg' name='[avg:NO_CAR_SHARE:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[TOTAL_POP]' derivation='Avg' name='[avg:TOTAL_POP:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[TRANSIT_SHARE]' derivation='Avg' name='[avg:TRANSIT_SHARE:qk]' pivot='key' type='quantitative' />
+            <column caption='Geoid10' datatype='string' name='[geoid10]' role='dimension' type='nominal' />
+            <column-instance column='[MONTH]' derivation='None' name='[none:MONTH:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[geoid10]' derivation='None' name='[none:geoid10:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[Action (Geoid10)]'>
+            <groupfilter function='level-members' level='[geoid10]' user:ui-action-filter='[Action3_DAD768DD7FF047729F4E580CC49AA2B9]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:TRANSIT_SHARE:qk]</column>
+            <column>[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[Action (Geoid10)]</column>
+            <column>[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[none:MONTH:qk]</column>
+            <column>[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:NO_CAR_SHARE:qk]</column>
+            <column>[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:MEDIAN_INCOME:qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:MEDIAN_INCOME:qk]' palette='blue_10_0' type='interpolated' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:MEDIAN_INCOME:qk]' />
+              <size column='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:TOTAL_POP:qk]' />
+              <lod column='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[none:geoid10:nk]' />
+            </encodings>
+            <trendline enable-confidence-bands='false' enable-instant-analytics='true' enabled='true' exclude-color='false' exclude-intercept='false' fit='linear' />
+          </pane>
+        </panes>
+        <rows>[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:Calculation_4230144718049281:qk]</rows>
+        <cols>[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:TRANSIT_SHARE:qk]</cols>
+      </table>
+      <simple-id uuid='{576A25C4-9C53-4854-ABFB-EC792F6D3741}' />
+    </worksheet>
+    <worksheet name='Sheet 5'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='FINAL_DATASET+ (Multiple Connections)' name='federated.0xpsn4x1dkd1zn1esiwuj148rntd' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0xpsn4x1dkd1zn1esiwuj148rntd'>
+            <column caption='Log Trips Per Household' datatype='real' name='[Calculation_4230144722124802]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='LOG([TRIPS_PER_HOUSEHOLD] + 0.01)' />
+            </column>
+            <column caption='Median Income' datatype='real' name='[MEDIAN_INCOME]' role='measure' type='quantitative' />
+            <column caption='Month' datatype='integer' name='[MONTH]' role='dimension' type='quantitative' />
+            <column caption='No Car Share' datatype='real' name='[NO_CAR_SHARE]' role='measure' type='quantitative' />
+            <column caption='Total Pop' datatype='integer' name='[TOTAL_POP]' role='measure' type='quantitative' />
+            <column caption='Tract Id' datatype='integer' name='[TRACT_ID]' role='dimension' type='ordinal' />
+            <column caption='Transit Share' datatype='real' name='[TRANSIT_SHARE]' role='measure' type='quantitative' />
+            <column caption='Trips Per Household' datatype='real' name='[TRIPS_PER_HOUSEHOLD]' role='measure' type='quantitative' />
+            <column-instance column='[Calculation_4230144722124802]' derivation='Avg' name='[avg:Calculation_4230144722124802:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[MEDIAN_INCOME]' derivation='Avg' name='[avg:MEDIAN_INCOME:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[NO_CAR_SHARE]' derivation='Avg' name='[avg:NO_CAR_SHARE:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[TOTAL_POP]' derivation='Avg' name='[avg:TOTAL_POP:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[TRANSIT_SHARE]' derivation='Avg' name='[avg:TRANSIT_SHARE:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[TRIPS_PER_HOUSEHOLD]' derivation='Avg' name='[avg:TRIPS_PER_HOUSEHOLD:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[MONTH]' derivation='None' name='[none:MONTH:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[TRACT_ID]' derivation='None' name='[none:TRACT_ID:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <slices>
+            <column>[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[none:MONTH:qk]</column>
+            <column>[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:NO_CAR_SHARE:qk]</column>
+            <column>[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:TRANSIT_SHARE:qk]</column>
+            <column>[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:MEDIAN_INCOME:qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <lod column='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[none:TRACT_ID:ok]' />
+            </encodings>
+            <trendline enable-confidence-bands='false' enable-instant-analytics='true' enabled='true' exclude-color='false' exclude-intercept='false' fit='linear' />
+          </pane>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:Calculation_4230144722124802:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <lod column='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[none:TRACT_ID:ok]' />
+            </encodings>
+            <trendline enable-confidence-bands='false' enable-instant-analytics='true' enabled='true' exclude-color='false' exclude-intercept='false' fit='linear' />
+          </pane>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:TRIPS_PER_HOUSEHOLD:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <size column='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:TOTAL_POP:qk]' />
+              <lod column='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[none:TRACT_ID:ok]' />
+            </encodings>
+            <trendline enable-confidence-bands='false' enable-instant-analytics='true' enabled='true' exclude-color='false' exclude-intercept='false' fit='linear' />
+          </pane>
+        </panes>
+        <rows>([federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:Calculation_4230144722124802:qk] + [federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:TRIPS_PER_HOUSEHOLD:qk])</rows>
+        <cols>[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:MEDIAN_INCOME:qk]</cols>
+      </table>
+      <simple-id uuid='{9BBF12C9-7E3A-481F-AEAC-E0F7E0A2B2A0}' />
+    </worksheet>
+    <worksheet name='Trips Per Capita Heatmap'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='FINAL_DATASET+ (Multiple Connections)' name='federated.0xpsn4x1dkd1zn1esiwuj148rntd' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.0xpsn4x1dkd1zn1esiwuj148rntd'>
+            <column caption='Avg Trip Miles' datatype='real' name='[AVG_TRIP_MILES]' role='measure' type='quantitative' />
+            <column caption='Avg Trip Minutes' datatype='real' name='[AVG_TRIP_MINUTES]' role='measure' type='quantitative' />
+            <column caption='Car Share' datatype='real' name='[CAR_SHARE]' role='measure' type='quantitative' />
+            <column caption='Log Trips Per Household' datatype='real' name='[Calculation_4230144722124802]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='LOG([TRIPS_PER_HOUSEHOLD] + 0.01)' />
+            </column>
+            <column aggregation='None' caption='Car Share (bin)' datatype='integer' name='[Car Share (bin)]' role='dimension' type='ordinal'>
+              <calculation class='bin' decimals='-2' formula='[CAR_SHARE]' peg='0' size='0.05' />
+            </column>
+            <column datatype='spatial' name='[Geometry]' role='measure' type='nominal' />
+            <column caption='Households' datatype='integer' name='[HOUSEHOLDS]' role='measure' type='quantitative' />
+            <column caption='Median Income' datatype='real' name='[MEDIAN_INCOME]' role='measure' type='quantitative' />
+            <column caption='Month' datatype='integer' name='[MONTH]' role='dimension' type='quantitative' />
+            <column caption='No Car Share' datatype='real' name='[NO_CAR_SHARE]' role='measure' type='quantitative' />
+            <column aggregation='None' caption='No Car Share (bin)' datatype='integer' name='[No Car Share (bin)]' role='dimension' type='ordinal'>
+              <calculation class='bin' decimals='-3' formula='[NO_CAR_SHARE]' peg='0' size='0.128' />
+            </column>
+            <column caption='Total Pop' datatype='integer' name='[TOTAL_POP]' role='measure' type='quantitative' />
+            <column caption='Tract Id' datatype='integer' name='[TRACT_ID]' role='dimension' type='ordinal' />
+            <column caption='Transit Share' datatype='real' name='[TRANSIT_SHARE]' role='measure' type='quantitative' />
+            <column caption='Trips Per Household' datatype='real' name='[TRIPS_PER_HOUSEHOLD]' role='measure' type='quantitative' />
+            <column-instance column='[AVG_TRIP_MILES]' derivation='Avg' name='[avg:AVG_TRIP_MILES:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[AVG_TRIP_MINUTES]' derivation='Avg' name='[avg:AVG_TRIP_MINUTES:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_4230144722124802]' derivation='Avg' name='[avg:Calculation_4230144722124802:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[MEDIAN_INCOME]' derivation='Avg' name='[avg:MEDIAN_INCOME:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[NO_CAR_SHARE]' derivation='Avg' name='[avg:NO_CAR_SHARE:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[TRANSIT_SHARE]' derivation='Avg' name='[avg:TRANSIT_SHARE:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Geometry]' derivation='Collect' name='[clct:Geometry:nk]' pivot='key' type='nominal' />
+            <column caption='Geoid10' datatype='string' name='[geoid10]' role='dimension' type='nominal' />
+            <column-instance column='[MONTH]' derivation='None' name='[none:MONTH:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[geoid10]' derivation='None' name='[none:geoid10:nk]' pivot='key' type='nominal' />
+            <column-instance column='[HOUSEHOLDS]' derivation='Sum' name='[sum:HOUSEHOLDS:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[TOTAL_POP]' derivation='Sum' name='[sum:TOTAL_POP:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[TRIPS_PER_HOUSEHOLD]' derivation='Sum' name='[sum:TRIPS_PER_HOUSEHOLD:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[Action (Car Share (bin))]'>
+            <groupfilter function='level-members' level='[Car Share (bin)]' user:ui-action-filter='[Action5_01D6DA79CC964364BAEE1EC05BE75ED6]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[Action (Geoid10)]'>
+            <groupfilter function='level-members' level='[geoid10]' user:ui-action-filter='[Action3_DAD768DD7FF047729F4E580CC49AA2B9]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[Action (No Car Share (bin),Tract Id)]'>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action1_7523019393144ECCB84AAFE43197245C]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[No Car Share (bin)]' />
+              <groupfilter function='level-members' level='[TRACT_ID]' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[Action (Tract Id)]'>
+            <groupfilter function='level-members' level='[TRACT_ID]' user:ui-action-filter='[Action2_EE8212D4313E4939A385A9A0425C29F9]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='quantitative' column='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[Longitude (generated)]' included-values='non-null' />
+          <slices>
+            <column>[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[Longitude (generated)]</column>
+            <column>[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[none:MONTH:qk]</column>
+            <column>[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:MEDIAN_INCOME:qk]</column>
+            <column>[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:TRANSIT_SHARE:qk]</column>
+            <column>[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:NO_CAR_SHARE:qk]</column>
+            <column>[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[Action (Geoid10)]</column>
+            <column>[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[Action (No Car Share (bin),Tract Id)]</column>
+            <column>[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[Action (Tract Id)]</column>
+            <column>[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[Action (Car Share (bin))]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[Longitude (generated)]' field-type='quantitative' max='-9723605.4219396878' min='-9807203.5292668156' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[Latitude (generated)]' field-type='quantitative' max='5168049.5419542622' min='5113116.3817046983' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:Calculation_4230144722124802:qk]' palette='tableau-map-temperatur' type='interpolated' />
+          </style-rule>
+          <style-rule element='map-layer'>
+            <format attr='enabled' id='hillshade_highlight_bright' value='true' />
+            <format attr='enabled' id='hillshade_highlight_med' value='true' />
+            <format attr='enabled' id='hillshade_shadow_faint' value='true' />
+            <format attr='enabled' id='hillshade_shadow_med' value='true' />
+            <format attr='enabled' id='hillshade_shadow_dark' value='true' />
+            <format attr='enabled' id='hillshade_shadow_extreme' value='true' />
+            <format attr='enabled' id='Coastline' value='true' />
+            <format attr='enabled' id='tunnel-service-link-track-case' value='true' />
+            <format attr='enabled' id='tunnel-street_limited-case' value='true' />
+            <format attr='enabled' id='tunnel-street-case' value='true' />
+            <format attr='enabled' id='tunnel-secondary-tertiary-case' value='true' />
+            <format attr='enabled' id='tunnel-primary-case' value='true' />
+            <format attr='enabled' id='tunnel-trunk_link-case' value='true' />
+            <format attr='enabled' id='tunnel-motorway_link-case' value='true' />
+            <format attr='enabled' id='tunnel-trunk-case' value='true' />
+            <format attr='enabled' id='tunnel-motorway-case' value='true' />
+            <format attr='enabled' id='tunnel-trunk_link' value='true' />
+            <format attr='enabled' id='tunnel-motorway_link' value='true' />
+            <format attr='enabled' id='tunnel-service-link-track' value='true' />
+            <format attr='enabled' id='tunnel-street_limited' value='true' />
+            <format attr='enabled' id='tunnel-street' value='true' />
+            <format attr='enabled' id='tunnel-tertiary' value='true' />
+            <format attr='enabled' id='tunnel-secondary' value='true' />
+            <format attr='enabled' id='tunnel-primary' value='true' />
+            <format attr='enabled' id='tunnel-trunk' value='true' />
+            <format attr='enabled' id='tunnel-motorway' value='true' />
+            <format attr='enabled' id='road-street-low' value='true' />
+            <format attr='enabled' id='road-street_limited-low' value='true' />
+            <format attr='enabled' id='road-pedestrian-case' value='true' />
+            <format attr='enabled' id='road-service-link-track-case' value='true' />
+            <format attr='enabled' id='road-street_limited-case' value='true' />
+            <format attr='enabled' id='road-street-case' value='true' />
+            <format attr='enabled' id='road-tertiary-case' value='true' />
+            <format attr='enabled' id='road-secondary-case' value='true' />
+            <format attr='enabled' id='road-primary-case' value='true' />
+            <format attr='enabled' id='road-motorway_link-case' value='true' />
+            <format attr='enabled' id='road-trunk_link-case' value='true' />
+            <format attr='enabled' id='road-trunk-case' value='true' />
+            <format attr='enabled' id='road-motorway-case' value='true' />
+            <format attr='enabled' id='road-trunk_link' value='true' />
+            <format attr='enabled' id='road-motorway_link' value='true' />
+            <format attr='enabled' id='road-path' value='true' />
+            <format attr='enabled' id='road-pedestrian' value='true' />
+            <format attr='enabled' id='road-polygon' value='true' />
+            <format attr='enabled' id='road-service-link-track' value='true' />
+            <format attr='enabled' id='road-street_limited' value='true' />
+            <format attr='enabled' id='road-street' value='true' />
+            <format attr='enabled' id='road-tertiary' value='true' />
+            <format attr='enabled' id='road-secondary' value='true' />
+            <format attr='enabled' id='road-primary' value='true' />
+            <format attr='enabled' id='road-trunk' value='true' />
+            <format attr='enabled' id='road-motorway' value='true' />
+            <format attr='enabled' id='road-rail' value='true' />
+            <format attr='enabled' id='road-rail-tracks' value='true' />
+            <format attr='enabled' id='bridge-street-low' value='true' />
+            <format attr='enabled' id='bridge-street_limited-low' value='true' />
+            <format attr='enabled' id='bridge-pedestrian-case' value='true' />
+            <format attr='enabled' id='bridge-service-link-track-case' value='true' />
+            <format attr='enabled' id='bridge-street_limited-case' value='true' />
+            <format attr='enabled' id='bridge-street-case' value='true' />
+            <format attr='enabled' id='bridge-tertiary-case' value='true' />
+            <format attr='enabled' id='bridge-secondary-case' value='true' />
+            <format attr='enabled' id='bridge-primary-case' value='true' />
+            <format attr='enabled' id='bridge-trunk_link-case' value='true' />
+            <format attr='enabled' id='bridge-motorway_link-case' value='true' />
+            <format attr='enabled' id='bridge-trunk-case' value='true' />
+            <format attr='enabled' id='bridge-motorway-case' value='true' />
+            <format attr='enabled' id='bridge-trunk_link' value='true' />
+            <format attr='enabled' id='bridge-motorway_link' value='true' />
+            <format attr='enabled' id='bridge-path' value='true' />
+            <format attr='enabled' id='bridge-pedestrian' value='true' />
+            <format attr='enabled' id='bridge-service-link-track' value='true' />
+            <format attr='enabled' id='bridge-street_limited' value='true' />
+            <format attr='enabled' id='bridge-street' value='true' />
+            <format attr='enabled' id='bridge-tertiary' value='true' />
+            <format attr='enabled' id='bridge-secondary' value='true' />
+            <format attr='enabled' id='bridge-primary' value='true' />
+            <format attr='enabled' id='bridge-trunk' value='true' />
+            <format attr='enabled' id='bridge-motorway' value='true' />
+            <format attr='enabled' id='bridge-rail' value='true' />
+            <format attr='enabled' id='bridge-rail-tracks' value='true' />
+            <format attr='enabled' id='bridge-trunk_link-2-case' value='true' />
+            <format attr='enabled' id='bridge-motorway_link-2-case' value='true' />
+            <format attr='enabled' id='bridge-trunk-2-case' value='true' />
+            <format attr='enabled' id='bridge-motorway-2-case' value='true' />
+            <format attr='enabled' id='bridge-trunk_link-2' value='true' />
+            <format attr='enabled' id='bridge-motorway_link-2' value='true' />
+            <format attr='enabled' id='bridge-trunk-2' value='true' />
+            <format attr='enabled' id='bridge-motorway-2' value='true' />
+            <format attr='enabled' id='road-shields-2-white' value='true' />
+            <format attr='enabled' id='road-shields-2-black' value='true' />
+            <format attr='enabled' id='road-shields-1-white' value='true' />
+            <format attr='enabled' id='road-shields-1-black' value='true' />
+            <format attr='enabled' id='road-label-small' value='true' />
+            <format attr='enabled' id='road-label-big' value='true' />
+            <format attr='enabled' id='light-admin-0-boundaries-bg' value='true' />
+            <format attr='enabled' id='light-admin-0-boundaries' value='true' />
+            <format attr='enabled' id='light-admin-0-boundaries-dispute' value='true' />
+            <format attr='enabled' id='light-admin-0-label-5th-tier' value='true' />
+            <format attr='enabled' id='light-admin-0-label-4th-tier' value='true' />
+            <format attr='enabled' id='light-admin-0-label-3rd-tier' value='true' />
+            <format attr='enabled' id='light-admin-0-label-2nd-tier' value='true' />
+            <format attr='enabled' id='light-admin-0-label-1st-tier' value='true' />
+            <format attr='enabled' id='light-admin-1-label-9th-tier' value='true' />
+            <format attr='enabled' id='light-admin-1-label-8th-tier' value='true' />
+            <format attr='enabled' id='light-admin-1-label-7th-tier' value='true' />
+            <format attr='enabled' id='light-admin-1-label-6th-tier' value='true' />
+            <format attr='enabled' id='light-admin-1-label-5th-tier' value='true' />
+            <format attr='enabled' id='light-admin-1-label-4th-tier' value='true' />
+            <format attr='enabled' id='light-admin-1-label-3rd-tier' value='true' />
+            <format attr='enabled' id='light-admin-1-label-2nd-tier' value='true' />
+            <format attr='enabled' id='light-admin-1-label-1st-tier' value='true' />
+            <format attr='enabled' id='light-us-admin-1-label-abbr-3rd-tier' value='true' />
+            <format attr='enabled' id='light-us-admin-1-label-abbr-2nd-tier' value='true' />
+            <format attr='enabled' id='light-us-admin-1-label-abbr-1st-tier' value='true' />
+            <format attr='enabled' id='light-admin-0-boundaries-bg-sub' value='true' />
+            <format attr='enabled' id='light-admin-1-boundaries-supress-bg' value='true' />
+            <format attr='enabled' id='light-admin-1-boundaries-sm-parents-bg' value='true' />
+            <format attr='enabled' id='light-admin-1-boundaries-md-parents-bg' value='true' />
+            <format attr='enabled' id='light-admin-1-boundaries-lg-parents-bg' value='true' />
+            <format attr='enabled' id='light-admin-0-boundaries-dispute-sub' value='true' />
+            <format attr='enabled' id='light-admin-0-boundaries-sub' value='true' />
+            <format attr='enabled' id='light-admin-1-boundaries-supress' value='true' />
+            <format attr='enabled' id='light-admin-1-boundaries-sm-parents' value='true' />
+            <format attr='enabled' id='light-admin-1-boundaries-md-parents' value='true' />
+            <format attr='enabled' id='light-admin-1-boundaries-lg-parents' value='true' />
+            <format attr='enabled' id='light-admin1-water-lines-usa-tableau' value='true' />
+            <format attr='enabled' id='light-9-dash-line-casing' value='true' />
+            <format attr='enabled' id='light-9-dash-line' value='true' />
+            <format attr='enabled' id='admin-2-boundaries-bg' value='true' />
+            <format attr='enabled' id='admin-2-boundaries' value='true' />
+            <format attr='enabled' id='admin-2-label' value='true' />
+            <format attr='enabled' id='US Metro Boundaries CBSA' value='true' />
+            <format attr='enabled' id='US Metro Labels CBSA' value='true' />
+            <format attr='enabled' id='marine-label-sm-ln' value='true' />
+            <format attr='enabled' id='marine-label-sm-pt' value='true' />
+            <format attr='enabled' id='marine-label-md-ln' value='true' />
+            <format attr='enabled' id='marine-label-md-pt' value='true' />
+            <format attr='enabled' id='marine-label-lg-ln' value='true' />
+            <format attr='enabled' id='marine-label-lg-pt' value='true' />
+            <format attr='enabled' id='water-label' value='true' />
+            <format attr='enabled' id='place-village' value='true' />
+            <format attr='enabled' id='place-town' value='true' />
+            <format attr='enabled' id='place-islands' value='true' />
+            <format attr='enabled' id='place-islands-2' value='true' />
+            <format attr='enabled' id='place-city-sm' value='true' />
+            <format attr='enabled' id='place-city-md-s' value='true' />
+            <format attr='enabled' id='place-city-md-n' value='true' />
+            <format attr='enabled' id='place-city-lg-s' value='true' />
+            <format attr='enabled' id='place-city-lg-n' value='true' />
+            <format attr='enabled' id='place-capital-s' value='true' />
+            <format attr='enabled' id='place-capital-n' value='true' />
+            <format attr='enabled' id='poi-minor-secondary' value='true' />
+            <format attr='enabled' id='poi-minor-primary' value='true' />
+            <format attr='enabled' id='poi-main-monuments' value='true' />
+            <format attr='enabled' id='poi-main-cemetery' value='true' />
+            <format attr='enabled' id='poi-main-greenspace' value='true' />
+            <format attr='enabled' id='poi-main-primary' value='true' />
+            <format attr='enabled' id='poi-main-peaks' value='true' />
+            <format attr='enabled' id='poi-rail' value='true' />
+            <format attr='enabled' id='airport-label' value='true' />
+            <format attr='enabled' id='place-suburb' value='true' />
+            <format attr='enabled' id='place-neighborhood' value='true' />
+            <format attr='enabled' id='building' value='true' />
+            <format attr='enabled' id='building-line' value='true' />
+            <format attr='enabled' id='Area Code Labels' value='true' />
+            <format attr='enabled' id='Area Code Boundaries' value='true' />
+            <format attr='enabled' id='Zip Code Boundaries' value='true' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0.0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Multipolygon' />
+            <encodings>
+              <color column='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:Calculation_4230144722124802:qk]' />
+              <lod column='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[clct:Geometry:nk]' />
+              <lod column='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[none:geoid10:nk]' />
+              <tooltip column='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[sum:HOUSEHOLDS:qk]' />
+              <tooltip column='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[sum:TRIPS_PER_HOUSEHOLD:qk]' />
+              <tooltip column='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[sum:TOTAL_POP:qk]' />
+              <tooltip column='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:AVG_TRIP_MILES:qk]' />
+              <tooltip column='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:AVG_TRIP_MINUTES:qk]' />
+              <tooltip column='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:MEDIAN_INCOME:qk]' />
+              <geometry column='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[clct:Geometry:nk]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run fontcolor='#757575'>Census Tract:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[none:geoid10:nk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#757575'>Total Pop:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[sum:TOTAL_POP:qk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#757575'>Households:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[sum:HOUSEHOLDS:qk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#757575'>Average Median Income:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:MEDIAN_INCOME:qk]>]]></run>
+                <run>Æ&#10;&#10;</run>
+                <run bold='true'>Trip Info:</run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#757575'>Average Trip Miles:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:AVG_TRIP_MILES:qk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#757575'>Average Trip Minutes:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:AVG_TRIP_MINUTES:qk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#757575'>Average Log Trips Per Household:	</run>
+                <run bold='true'><![CDATA[<[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:Calculation_4230144722124802:qk]>]]></run>
+                <run>Æ&#10;</run>
+                <run indent='4770'>Æ&#10;</run>
+                <run bold='true' fontcolor='#1b1b1b' indent='4770'>Mobility:</run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#757575'>Trips Per Household:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[sum:TRIPS_PER_HOUSEHOLD:qk]>]]></run>
+              </formatted-text>
+            </customized-tooltip>
+          </pane>
+        </panes>
+        <rows>[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[Latitude (generated)]</rows>
+        <cols>[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[Longitude (generated)]</cols>
+      </table>
+      <simple-id uuid='{4FAB7F97-5755-45BF-9046-33AE488AC194}' />
+    </worksheet>
+    <worksheet name='Walk Share vs. Avg. Trips Per Capita'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='FINAL_DATASET+ (Multiple Connections)' name='federated.0xpsn4x1dkd1zn1esiwuj148rntd' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0xpsn4x1dkd1zn1esiwuj148rntd'>
+            <column caption='Car Share' datatype='real' name='[CAR_SHARE]' role='measure' type='quantitative' />
+            <column aggregation='None' caption='Car Share (bin)' datatype='integer' name='[Car Share (bin)]' role='dimension' type='ordinal'>
+              <calculation class='bin' decimals='-2' formula='[CAR_SHARE]' peg='0' size='0.05' />
+            </column>
+            <column caption='Median Income' datatype='real' name='[MEDIAN_INCOME]' role='measure' type='quantitative' />
+            <column caption='Month' datatype='integer' name='[MONTH]' role='dimension' type='quantitative' />
+            <column caption='No Car Share' datatype='real' name='[NO_CAR_SHARE]' role='measure' type='quantitative' />
+            <column caption='Total Pop' datatype='integer' name='[TOTAL_POP]' role='measure' type='quantitative' />
+            <column caption='Tract Id' datatype='integer' name='[TRACT_ID]' role='dimension' type='ordinal' />
+            <column caption='Transit Share' datatype='real' name='[TRANSIT_SHARE]' role='measure' type='quantitative' />
+            <column caption='Trips Per Capita' datatype='real' name='[TRIPS_PER_CAPITA]' role='measure' type='quantitative' />
+            <column caption='Walk Share' datatype='real' name='[WALK_SHARE]' role='measure' type='quantitative' />
+            <column-instance column='[MEDIAN_INCOME]' derivation='Avg' name='[avg:MEDIAN_INCOME:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[NO_CAR_SHARE]' derivation='Avg' name='[avg:NO_CAR_SHARE:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[TRANSIT_SHARE]' derivation='Avg' name='[avg:TRANSIT_SHARE:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[TRIPS_PER_CAPITA]' derivation='Avg' name='[avg:TRIPS_PER_CAPITA:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[WALK_SHARE]' derivation='Avg' name='[avg:WALK_SHARE:qk]' pivot='key' type='quantitative' />
+            <column caption='Geoid10' datatype='string' name='[geoid10]' role='dimension' type='nominal' />
+            <column-instance column='[MONTH]' derivation='None' name='[none:MONTH:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[TRACT_ID]' derivation='None' name='[none:TRACT_ID:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[TOTAL_POP]' derivation='Sum' name='[sum:TOTAL_POP:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[Action (Car Share (bin))]'>
+            <groupfilter function='level-members' level='[Car Share (bin)]' user:ui-action-filter='[Action5_01D6DA79CC964364BAEE1EC05BE75ED6]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[Action (Geoid10)]'>
+            <groupfilter function='level-members' level='[geoid10]' user:ui-action-filter='[Action2_DB23A4EEE12E49A8AB1DEB09D535902F]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[Action (Tract Id)]'>
+            <groupfilter function='level-members' level='[TRACT_ID]' user:ui-action-filter='[Action4_C3E945F45C5E48369B14E7BBCDCB4E0B]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:MEDIAN_INCOME:qk]</column>
+            <column>[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:NO_CAR_SHARE:qk]</column>
+            <column>[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:TRANSIT_SHARE:qk]</column>
+            <column>[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[none:MONTH:qk]</column>
+            <column>[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[Action (Geoid10)]</column>
+            <column>[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[Action (Tract Id)]</column>
+            <column>[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[Action (Car Share (bin))]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:TRIPS_PER_CAPITA:qk]' field-type='quantitative' max='15.0' min='0.0' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:MEDIAN_INCOME:qk]' palette='orange_blue_diverging_10_0' type='interpolated' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Circle' />
+            <encodings>
+              <color column='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:MEDIAN_INCOME:qk]' />
+              <size column='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[sum:TOTAL_POP:qk]' />
+              <lod column='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[none:TRACT_ID:ok]' />
+            </encodings>
+            <trendline enable-confidence-bands='false' enable-instant-analytics='true' enabled='true' exclude-color='false' exclude-intercept='false' fit='linear' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-transparency' value='206' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:TRIPS_PER_CAPITA:qk]</rows>
+        <cols>[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:WALK_SHARE:qk]</cols>
+      </table>
+      <simple-id uuid='{CC793210-D261-4581-88D2-BEA1A82CD7D1}' />
+    </worksheet>
+    <worksheet name='no car map'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='FINAL_DATASET+ (Multiple Connections)' name='federated.0xpsn4x1dkd1zn1esiwuj148rntd' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.0xpsn4x1dkd1zn1esiwuj148rntd'>
+            <column datatype='spatial' name='[Geometry]' role='measure' type='nominal' />
+            <column caption='Median Income' datatype='real' name='[MEDIAN_INCOME]' role='measure' type='quantitative' />
+            <column caption='Month' datatype='integer' name='[MONTH]' role='dimension' type='quantitative' />
+            <column caption='No Car Share' datatype='real' name='[NO_CAR_SHARE]' role='measure' type='quantitative' />
+            <column caption='Transit Share' datatype='real' name='[TRANSIT_SHARE]' role='measure' type='quantitative' />
+            <column-instance column='[MEDIAN_INCOME]' derivation='Avg' name='[avg:MEDIAN_INCOME:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[NO_CAR_SHARE]' derivation='Avg' name='[avg:NO_CAR_SHARE:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[TRANSIT_SHARE]' derivation='Avg' name='[avg:TRANSIT_SHARE:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Geometry]' derivation='Collect' name='[clct:Geometry:nk]' pivot='key' type='nominal' />
+            <column caption='Geoid10' datatype='string' name='[geoid10]' role='dimension' type='nominal' />
+            <column-instance column='[MONTH]' derivation='None' name='[none:MONTH:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[geoid10]' derivation='None' name='[none:geoid10:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[Action (Geoid10)]'>
+            <groupfilter function='level-members' level='[geoid10]' user:ui-action-filter='[Action3_DAD768DD7FF047729F4E580CC49AA2B9]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='quantitative' column='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[Longitude (generated)]' included-values='non-null' />
+          <slices>
+            <column>[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[Longitude (generated)]</column>
+            <column>[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[Action (Geoid10)]</column>
+            <column>[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[none:MONTH:qk]</column>
+            <column>[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:NO_CAR_SHARE:qk]</column>
+            <column>[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:TRANSIT_SHARE:qk]</column>
+            <column>[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:MEDIAN_INCOME:qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:NO_CAR_SHARE:qk]' palette='blue_10_0' type='interpolated' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0.0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Multipolygon' />
+            <encodings>
+              <lod column='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[none:geoid10:nk]' />
+              <lod column='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[clct:Geometry:nk]' />
+              <color column='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:NO_CAR_SHARE:qk]' />
+              <geometry column='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[clct:Geometry:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[Latitude (generated)]</rows>
+        <cols>[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[Longitude (generated)]</cols>
+      </table>
+      <simple-id uuid='{F9052748-E5CF-470E-8517-086F9F67B0E4}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard enable-sort-zone-taborder='true' name='Dashboard 1'>
+      <style />
+      <size sizing-mode='automatic' />
+      <datasources>
+        <datasource caption='FINAL_DATASET+ (Multiple Connections)' name='federated.0xpsn4x1dkd1zn1esiwuj148rntd' />
+      </datasources>
+      <datasource-dependencies datasource='federated.0xpsn4x1dkd1zn1esiwuj148rntd'>
+        <column caption='Median Income' datatype='real' name='[MEDIAN_INCOME]' role='measure' type='quantitative' />
+        <column caption='Month' datatype='integer' name='[MONTH]' role='dimension' type='quantitative' />
+        <column caption='No Car Share' datatype='real' name='[NO_CAR_SHARE]' role='measure' type='quantitative' />
+        <column-instance column='[MEDIAN_INCOME]' derivation='Avg' name='[avg:MEDIAN_INCOME:qk]' pivot='key' type='quantitative' />
+        <column-instance column='[NO_CAR_SHARE]' derivation='Avg' name='[avg:NO_CAR_SHARE:qk]' pivot='key' type='quantitative' />
+        <column-instance column='[MONTH]' derivation='None' name='[none:MONTH:qk]' pivot='key' type='quantitative' />
+      </datasource-dependencies>
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='2322' id='3' type-v2='empty' w='1799' x='97718' y='8103'>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+          <zone forceUpdate='true' h='7252' id='6' type-v2='text' w='99034' x='483' y='851'>
+            <formatted-text>
+              <run bold='true' fontalignment='1' fontcolor='#000000' fontsize='24'>Urban Mobility Characteristics and Taxi Usage in Chicago</run>
+              <run fontalignment='1'>Æ&#10;</run>
+              <run fontalignment='1' fontcolor='#000000' fontsize='16'>Hypothesis: Neighborhoods with more urban mobility characteristics tend to use taxis more frequently.</run>
+            </formatted-text>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+              <format attr='background-color' value='#dfedeb' />
+            </zone-style>
+          </zone>
+          <zone h='28365' id='9' param='horz' type-v2='layout-flow' w='49517' x='50000' y='10425'>
+            <zone fixed-size='703' h='28365' id='20' is-fixed='true' name='Walk Share vs. Avg. Trips Per Capita' w='42909' x='50000' y='10425'>
+              <layout-cache minheight='213' minwidth='159' type-h='scalable' type-w='scalable' />
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+            <zone h='28365' id='27' param='vert' type-v2='layout-flow' w='6608' x='92909' y='10425'>
+              <zone h='2553' id='22' name='Walk Share vs. Avg. Trips Per Capita' pane-specification-id='0' param='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[sum:TOTAL_POP:qk]' type-v2='size' w='6608' x='92909' y='10425'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+          </zone>
+          <zone h='88724' id='25' is-fixed='true' type-v2='layout-basic' w='49517' x='483' y='10425'>
+            <zone h='45847' id='11' param='vert' type-v2='layout-flow' w='49517' x='483' y='10425'>
+              <zone fixed-size='880' h='45847' id='13' is-fixed='true' name='Trips Per Capita Heatmap' w='49517' x='483' y='10425'>
+                <layout-cache minheight='251' type-h='scalable' type-w='fixed' />
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+            <zone h='42877' id='26' param='vert' type-v2='layout-flow' w='49517' x='483' y='56272'>
+              <zone fixed-size='199' h='21170' id='24' is-fixed='true' param='vert' type-v2='layout-flow' w='49517' x='483' y='56272'>
+                <zone h='5851' id='14' name='Trips Per Capita Heatmap' param='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:MEDIAN_INCOME:qk]' show-domain='false' show-null-ctrls='false' type-v2='filter' w='49517' x='483' y='56272'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone h='5851' id='15' name='Trips Per Capita Heatmap' param='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[none:MONTH:qk]' show-domain='false' show-null-ctrls='false' type-v2='filter' w='49517' x='483' y='62123'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone h='5851' id='16' name='Trips Per Capita Heatmap' param='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:NO_CAR_SHARE:qk]' show-domain='false' show-null-ctrls='false' type-v2='filter' w='49517' x='483' y='67974'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone h='2553' id='17' name='Trips Per Capita Heatmap' pane-specification-id='0' param='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:Calculation_4230144722124802:qk]' type-v2='color' w='49517' x='483' y='73825'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone h='2553' id='21' name='Walk Share vs. Avg. Trips Per Capita' pane-specification-id='0' param='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:MEDIAN_INCOME:qk]' type-v2='color' w='49517' x='483' y='77442'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='19154' id='19' name='Car_Share vs. Avg. Trips Per Capita' w='49517' x='483' y='79995'>
+                <layout-cache minheight='210' type-h='scalable' type-w='fixed' />
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+          </zone>
+          <zone h='2322' id='23' param='horz' type-v2='layout-flow' w='97235' x='483' y='8103' />
+          <zone h='30180' id='28' param='vert' type-v2='layout-flow' w='49517' x='50000' y='38790'>
+            <zone h='30180' id='29' name='No Car Share vs. Trips Per Household' w='49517' x='50000' y='38790'>
+              <layout-cache minheight='195' type-h='scalable' type-w='fixed' />
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+          </zone>
+          <zone h='30179' id='30' param='vert' type-v2='layout-flow' w='38335' x='50000' y='68970'>
+            <zone h='30179' id='31' name='Avg. Median Income vs. Avg. Log Trips Per Capita' w='38335' x='50000' y='68970'>
+              <layout-cache minheight='213' type-h='scalable' type-w='fixed' />
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+          </zone>
+          <zone h='30179' id='33' param='vert' type-v2='layout-flow' w='11182' x='88335' y='68970'>
+            <zone h='2553' id='32' name='Avg. Median Income vs. Avg. Log Trips Per Capita' pane-specification-id='0' param='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:BACHELORS_RATE:qk]' type-v2='color' w='11182' x='88335' y='68970'>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='1700' minheight='1700' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='37' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98298' id='36' param='vert' type-v2='layout-flow' w='99034' x='483' y='851'>
+                <zone forceUpdate='true' h='7252' id='6' type-v2='text' w='99034' x='483' y='851'>
+                  <formatted-text>
+                    <run bold='true' fontalignment='1' fontcolor='#000000' fontsize='24'>Urban Mobility Characteristics and Taxi Usage in Chicago</run>
+                    <run fontalignment='1'>Æ&#10;</run>
+                    <run fontalignment='1' fontcolor='#000000' fontsize='16'>Hypothesis: Neighborhoods with more urban mobility characteristics tend to use taxis more frequently.</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                    <format attr='background-color' value='#dfedeb' />
+                  </zone-style>
+                </zone>
+                <zone h='5851' id='14' name='Trips Per Capita Heatmap' param='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:MEDIAN_INCOME:qk]' show-domain='false' show-null-ctrls='false' type-v2='filter' w='49517' x='483' y='56272'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='5851' id='15' name='Trips Per Capita Heatmap' param='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[none:MONTH:qk]' show-domain='false' show-null-ctrls='false' type-v2='filter' w='49517' x='483' y='62123'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='5851' id='16' name='Trips Per Capita Heatmap' param='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:NO_CAR_SHARE:qk]' show-domain='false' show-null-ctrls='false' type-v2='filter' w='49517' x='483' y='67974'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='45847' id='13' is-fixed='true' name='Trips Per Capita Heatmap' w='49517' x='483' y='10425'>
+                  <layout-cache minheight='251' type-h='scalable' type-w='fixed' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='2553' id='17' name='Trips Per Capita Heatmap' pane-specification-id='0' param='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:Calculation_4230144722124802:qk]' type-v2='color' w='49517' x='483' y='73825'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='219' h='28365' id='20' is-fixed='true' name='Walk Share vs. Avg. Trips Per Capita' w='42909' x='50000' y='10425'>
+                  <layout-cache minheight='213' minwidth='159' type-h='scalable' type-w='scalable' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='2553' id='22' name='Walk Share vs. Avg. Trips Per Capita' pane-specification-id='0' param='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[sum:TOTAL_POP:qk]' type-v2='size' w='6608' x='92909' y='10425'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='2553' id='21' name='Walk Share vs. Avg. Trips Per Capita' pane-specification-id='0' param='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:MEDIAN_INCOME:qk]' type-v2='color' w='49517' x='483' y='77442'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='234' h='30180' id='29' is-fixed='true' name='No Car Share vs. Trips Per Household' w='49517' x='50000' y='38790'>
+                  <layout-cache minheight='195' type-h='scalable' type-w='fixed' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='233' h='30179' id='31' is-fixed='true' name='Avg. Median Income vs. Avg. Log Trips Per Capita' w='38335' x='50000' y='68970'>
+                  <layout-cache minheight='213' type-h='scalable' type-w='fixed' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='2553' id='32' name='Avg. Median Income vs. Avg. Log Trips Per Capita' pane-specification-id='0' param='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:BACHELORS_RATE:qk]' type-v2='color' w='11182' x='88335' y='68970'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='145' h='19154' id='19' is-fixed='true' name='Car_Share vs. Avg. Trips Per Capita' w='49517' x='483' y='79995'>
+                  <layout-cache minheight='210' type-h='scalable' type-w='fixed' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{A6726D05-D669-4AE5-8011-6C34F785275A}' />
+    </dashboard>
+  </dashboards>
+  <windows saved-dpi-scale-factor='1.25' source-height='37'>
+    <window class='worksheet' name='Trips Per Capita Heatmap'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card param='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:MEDIAN_INCOME:qk]' show-domain='false' show-null-ctrls='false' type='filter' />
+            <card param='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[none:MONTH:qk]' show-domain='false' show-null-ctrls='false' type='filter' />
+            <card param='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:NO_CAR_SHARE:qk]' show-domain='false' show-null-ctrls='false' type='filter' />
+            <card pane-specification-id='0' param='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:Calculation_4230144722124802:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{BBCC076E-8ADA-4A4D-A973-C8CCCF864CF0}' />
+    </window>
+    <window class='worksheet' name='no car map'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:NO_CAR_SHARE:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{1FE71EEB-4ED3-4CF1-A927-D7A6B873BC09}' />
+    </window>
+    <window class='worksheet' name='Sheet 3'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='2' param='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:MEDIAN_INCOME:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{DA3FB009-A24A-4DA8-8A3D-17A48CF7134C}' />
+    </window>
+    <window class='worksheet' name='Sheet 4'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:TOTAL_POP:qk]' type='size' />
+            <card pane-specification-id='0' param='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:MEDIAN_INCOME:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{56CD76F3-D46E-41BC-A8ED-56788EA25744}' />
+    </window>
+    <window class='worksheet' name='Sheet 5'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='2' param='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:TOTAL_POP:qk]' type='size' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{741CC6DF-7726-44D7-98DF-A22CDC10DCE5}' />
+    </window>
+    <window class='dashboard' maximized='true' name='Dashboard 1'>
+      <viewpoints>
+        <viewpoint name='Avg. Median Income vs. Avg. Log Trips Per Capita'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Car_Share vs. Avg. Trips Per Capita'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='No Car Share vs. Trips Per Household'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Trips Per Capita Heatmap'>
+          <zoom type='entire-view' />
+          <default-map-tool-selection tool='1' />
+        </viewpoint>
+        <viewpoint name='Walk Share vs. Avg. Trips Per Capita'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='20' />
+      <simple-id uuid='{DBF3554A-59DC-4AC0-92EC-AF29E056E3EA}' />
+    </window>
+    <window class='worksheet' name='Walk Share vs. Avg. Trips Per Capita'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:MEDIAN_INCOME:qk]' type='color' />
+            <card pane-specification-id='0' param='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[sum:TOTAL_POP:qk]' type='size' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{03D2BE0D-9C5D-4771-8164-24BA77A296C4}' />
+    </window>
+    <window class='worksheet' name='Car_Share vs. Avg. Trips Per Capita'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[none:TRACT_ID:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{D3AA9E70-EC7A-427A-86DE-C49B38D66C75}' />
+    </window>
+    <window class='worksheet' name='No Car Share vs. Trips Per Household'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{B199410C-94FC-4774-BA1C-C541458EE06B}' />
+    </window>
+    <window class='worksheet' name='Avg. Median Income vs. Avg. Log Trips Per Capita'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[sum:TOTAL_POP:qk]' type='size' />
+            <card pane-specification-id='0' param='[federated.0xpsn4x1dkd1zn1esiwuj148rntd].[avg:BACHELORS_RATE:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{F7FA9C69-29A0-413F-BFD0-DE5EB7AB139E}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Car_Share vs. Avg. Trips Per Capita' width='192'>
+      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
+      SUVORK5CYII=
+    </thumbnail>
+    <thumbnail height='192' name='Dashboard 1' width='192'>
+      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
+    </thumbnail>
+    <thumbnail height='192' name='Walk Share vs. Avg. Trips Per Capita' width='192'>
+      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
+      OQAAAABJRU5ErkJggg==
+    </thumbnail>
+  </thumbnails>
+</workbook>
