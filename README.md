@@ -9,12 +9,10 @@ Snowflake and Tableau.
 
 ## Group Project
 
-This urban mobility project was developed collaboratively by Yifan (Cici) Yao,
-Charles Wei, and their teammates. This repository is Yifan's portfolio copy of
-the team project, forked from teammate
-[Charles Wei's repository](https://github.com/charleswei2003/chicago-taxi-demand-data-pipeline)
-with the shared project history preserved. It includes the team's data pipeline
-and the Tableau dashboard workbook in `tableau/`.
+This urban mobility project was developed collaboratively by me and my five
+teammates. This repository is my portfolio copy of our team project, with the
+shared project history preserved. It includes our data pipeline and Tableau
+dashboard workbook, with the workbook located under `tableau/`.
 
 ## Pipeline Architecture
 
