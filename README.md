@@ -7,6 +7,15 @@ This MGMT 405 course project integrates 2017 Chicago taxi trip activity with
 creates a monthly pickup-demand dataset at the tract level for analysis in
 Snowflake and Tableau.
 
+## Source and Included Workbook
+
+This repository preserves the pipeline from
+[charleswei2003/chicago-taxi-demand-data-pipeline](https://github.com/charleswei2003/chicago-taxi-demand-data-pipeline)
+and its original commit history. The Tableau workbook supplied by Yifan (Cici)
+Yao is included under `tableau/`, with private connection details replaced by
+placeholders for public sharing. The repository combines these project artifacts;
+it does not imply sole authorship of the original pipeline.
+
 ## Pipeline Architecture
 
 ```mermaid
@@ -54,7 +63,8 @@ chicago-taxi-demand-pipeline/
 │   ├── pipeline_setup.md
 │   └── snowflake_setup.md
 ├── tableau/
-│   └── README.md
+│   ├── README.md
+│   └── MSBA405_Final_Project_Dashboard.twb
 ├── tests/
 │   └── smoke_test.py
 └── archive/
@@ -144,10 +154,14 @@ connection. After `COPY INTO`, it executes a row count and a ten-row sample.
 
 ## Tableau Dashboard
 
-**Dashboard link:** `TODO: insert Tableau Public or Tableau Cloud URL`
+The [Tableau workbook](tableau/MSBA405_Final_Project_Dashboard.twb) is included.
+It contains one dashboard and nine worksheets exploring taxi demand alongside
+income, vehicle availability, and commuting characteristics.
 
-See [tableau/README.md](tableau/README.md) for the workbook, source-table, and
-dashboard-description placeholders to complete after publication.
+The `.twb` stores the workbook definition; its referenced local `.hyper` extract
+and census-tract shapefile are not included. See
+[tableau/README.md](tableau/README.md) for connection details and opening
+instructions. A published Tableau URL or dashboard image has not been supplied.
 
 ## Notes and Limitations
 
@@ -159,6 +173,7 @@ dashboard-description placeholders to complete after publication.
 - `pipeline.sh` creates the configured Snowflake database/schema if permitted,
   file format, and destination table; it does not create GCP or Snowflake
   infrastructure.
-- The recovered Tableau workbooks were not present in the supplied file set.
+- The Tableau workbook is included, but its local extract and shapefile are not.
+  Reconnect the data sources or supply a packaged workbook to render it elsewhere.
 - Only static/offline validation is possible without access to the configured
   GCP, Dataproc, Snowflake, and Tableau services.
