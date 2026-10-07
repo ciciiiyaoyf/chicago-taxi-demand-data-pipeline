@@ -66,6 +66,6 @@ self-contained on another computer.
    spatial data. Alternatively, add a published dashboard link or a PDF/PNG
    export for a viewable work sample.
 
-The original pipeline and this supplied workbook are retained as project
-artifacts. Original pipeline attribution and commit history are preserved; no
-claim of sole authorship is made.
+This workbook is part of the team's urban mobility project. It is included here
+alongside the project pipeline, with private connection details replaced by
+placeholders for public sharing.
