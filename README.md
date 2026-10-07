@@ -7,14 +7,14 @@ This MGMT 405 course project integrates 2017 Chicago taxi trip activity with
 creates a monthly pickup-demand dataset at the tract level for analysis in
 Snowflake and Tableau.
 
-## Source and Included Workbook
+## Group Project
 
-This repository preserves the pipeline from
-[charleswei2003/chicago-taxi-demand-data-pipeline](https://github.com/charleswei2003/chicago-taxi-demand-data-pipeline)
-and its original commit history. The Tableau workbook supplied by Yifan (Cici)
-Yao is included under `tableau/`, with private connection details replaced by
-placeholders for public sharing. The repository combines these project artifacts;
-it does not imply sole authorship of the original pipeline.
+This urban mobility project was developed collaboratively by Yifan (Cici) Yao,
+Charles Wei, and their teammates. This repository is Yifan's portfolio copy of
+the team project, forked from teammate
+[Charles Wei's repository](https://github.com/charleswei2003/chicago-taxi-demand-data-pipeline)
+with the shared project history preserved. It includes the team's data pipeline
+and the Tableau dashboard workbook in `tableau/`.
 
 ## Pipeline Architecture
 
